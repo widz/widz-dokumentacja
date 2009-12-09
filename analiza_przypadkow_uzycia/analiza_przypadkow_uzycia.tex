@@ -1,0 +1,181 @@
+\documentclass[12pt,leqno,twoside]{mwart}
+\usepackage[utf8x]{inputenc}
+\usepackage{polski}
+\usepackage{a4wide}
+
+%---------------------------------------------------------------------------------
+%paginy!
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1. }}
+\fancyhead[LE]{WiDz -- Wirtualny Dziennik. Analiza przypadków użycia}
+\fancyhead[RO]{\rightmark}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{}
+\fancyfoot[CE]{\thepage}
+\fancyfoot[CO]{\thepage}
+\addtolength{\headheight}{1.5pt} % pionowy odstep na kreske
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.0pt}
+%--------------------------------------------------------------------------------
+
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad #1.}
+\makeatother
+
+\renewcommand{\figurename}{Rys.}
+\renewcommand{\labelitemi}{-}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+Instytut Informatyki Uniwersytetu Wrocławskiego \\
+Studencka Pracownia Inżynierii Oprogramowania, G4 \\
+\vspace{4cm}
+\Large Michał Kopacz, Mateusz Nahalewicz, Karol Bajko \\
+\vspace{0.5cm}
+\huge Dokumentacja projektu \mbox{\textbf{WiDz -- Wirtualny Dziennik}} \\ \Large Analiza przypadków użycia\\
+\vspace{1cm}
+\normalsize Wersja 1.1
+\vfill
+\normalsize Wrocław 2009
+\end{center}
+\end{titlepage}
+
+\newpage
+
+\begin{table}
+	\centering
+	\caption{Historia zmian w~dokumencie}
+		\begin{tabular}{|r|c|c|l|l|}
+		\hline
+		Lp. 	& Data       & Nr wersji 	& Autorzy           		& Zmiana \\ \hline
+		1.   	& 2009-12-05 & 1.0       	& Mateusz Nahalewicz & Utworzenie dokumentu \\ \hline
+		2.   	& 2009-12-09 & 1.1       	& Michał Kopacz & Korekta \\ \hline
+		\end{tabular}
+\end{table}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+
+\section{Wstęp}
+\noindent Przypadek użycia to opis sekwencji działań mającej określony cel. W trakcie jego realizacji zachodzi interakcja pomiędzy użytkownikiem a aplikacją. Celem specyfikowania przypadków użycia jest ustalenie przebiegu procesów oraz wynikających z nich wymagań w formie zrozumiałej jednocześnie w całości dla użytkownika i analizującego wymagania oraz w dużej części dla wykonawcy produktu. Przypadki użycia opisują system z punktu widzenia użytkownika. Dzięki nim użytkownikowi jest łatwiej sobie wyobrazić jak system będzie funkcjonował. Użytkownik nie czyta skomplikowanego opisu, lecz krótki scenariusz, mówiący na przykład o tym jak sprawdzić plan lekcji konkretnego nauczyciela.\\
+
+\section{Analiza przypadków użycia}
+\subsection{Rejestracja użytkownika w programie}
+\begin{enumerate}
+\item Uruchomienie programu.
+\item Wybór opcji rejestracji.
+\item Wpisanie unikatowego identyfikatora.
+\item Wpisanie hasła.
+\item Ponowne wpisanie hasła.
+\item Uzupełnienie pozostałych danych osobowych.
+\item Aktywacja konta przez administratora po okazaniu dokumentu tożsamości.
+\end{enumerate}
+\subsection{Uwierzytelnienie użytkownika}
+\begin{enumerate}
+\item Uruchomienie programu.
+\item Wpisanie identyfikatora.
+\item Wpisanie hasła.
+\item Zatwierdzenie operacji.
+\end{enumerate}
+\subsection{Wpisanie oceny}
+\noindent  \textbf{Założenie:} Oceny może wpisywać tylko nauczyciel.\\
+\begin{enumerate}
+\item Uwierzytelnienie użytkownika.
+\item Wybór opcji wpisywania oceny.
+\item WiDz wyświetla listę przedmiotów, z których nauczyciel może wystawiać oceny.
+\item Wybór przedmiotu.
+\item WiDz wyświetla listę klas, w których nauczyciel może wystawiać oceny.
+\item Wybór klasy.
+\item Wpisanie ocen wybranym uczniom.
+\item Zatwierdzenie operacji.
+\end{enumerate}
+\subsection{Wpisanie nieobecności}
+\noindent  \textbf{Założenie:} Nieobecności może wpisywać tylko nauczyciel.\\
+\begin{enumerate}
+\item Uwierzytelnienie użytkownika.
+\item Wybór opcji wpisywania nieobecności.
+\item WiDz wyświetla listę przedmiotów, z których nauczyciel może wpisywać nieobecności.
+\item Wybór przedmiotu.
+\item WiDz wyświetla listę klas, w których nauczyciel może wpisywać nieobecności.
+\item Wybór klasy.
+\item Wybór daty.
+\item Wpisanie nieobecności wybranym uczniom.
+\item Zatwierdzenie operacji.
+\end{enumerate}
+\subsection{Przegląd statystyk}
+\noindent \textbf{Założenie:} Statystyki może przeglądać tylko nauczyciel.\\
+\begin{enumerate}
+\item Uwierzytelnienie użytkownika.
+\item Wybór opcji przeglądania statystyk.
+\item Wybór przedmiotu.
+\item Wybór klasy.
+\item WiDz analizuje osiągnięcia uczniów danej klasy z danego przedmiotu.
+\item Prezentacja wyników.
+\end{enumerate}
+\subsection{Przegląd planu lekcji}
+\begin{enumerate}
+\item Uwierzytelnienie użytkownika.
+\item Wybór opcji przeglądania planu lekcji.
+\item Użytkownik decyduje czy chce zobaczyć plan konkretnego nauczyciela czy konkretnej klasy.
+\item Wybór nauczyciela lub klasy w zależności od poprzedniej decyzji.
+\item Prezentacja planu lekcji.
+\end{enumerate}
+\subsection{Uregulowanie opłat na rzecz szkoły}
+\begin{enumerate}
+\item Uwierzytelnienie użytkownika.
+\item Wybór opcji uregulowania opłat.
+\item Opiekun wybiera składki, które chce uregulować.
+\item WiDz łączy się z systemem \textit{PayPal}, który umożliwia dokończenie operacji wpłaty.
+\end{enumerate}
+\subsection{Sprawdzenie ocen przez ucznia}
+\begin{enumerate}
+\item Uwierzytelnienie użytkownika.
+\item Wybór opcji przeglądania ocen.
+\item Wybór przedmiotu.
+\item WiDz wyświetla listę wszystkich ocen z danego przedmiotu wraz z ich krótkimi opisami.
+\end{enumerate}
+\subsection{Sprawdzenie nieobecności przez ucznia}
+\begin{enumerate}
+\item Uwierzytelnienie użytkownika.
+\item Wybór opcji przeglądania listy nieobecności.
+\item Wybór przedmiotu.
+\item WiDz wyświetla listę nieobecności ucznia na lekcjach z wybranego przedmiotu.
+\end{enumerate}
+\subsection{Udział ucznia w ankiecie}
+\begin{enumerate}
+\item Uwierzytelnienie użytkownika.
+\item Wybór opcji udziału w ankiecie.
+\item WiDz wyświetla formularz z pytaniami.
+\item Wypełnienie formularza.
+\item Zatwierdzenie odpowiedzi.
+\end{enumerate}
+\subsection{Nadanie przez ucznia wiadomości w kąciku klasowym}
+\begin{enumerate}
+\item Uwierzytelnienie użytkownika.
+\item Wybór opcji przeglądania kącika klasowego.
+\item Wpisanie tekstu wiadomości do kącika klasowego.
+\item Wysłanie wiadomości.
+\end{enumerate}
+\subsection{Odczytanie przez ucznia wiadomości z kącika klasowego}
+\begin{enumerate}
+\item Uwierzytelnienie użytkownika.
+\item Wybór opcji przeglądania kącika klasowego.
+\item Wyświetlenie najnowszych wiadomości z kącika klasowego.
+\end{enumerate}
+\subsection{Sprawdzenie ocen przez opiekuna}
+\begin{enumerate}
+\item Uwierzytelnienie użytkownika.
+\item Wybór opcji przeglądania ocen.
+\item WiDz wyświetla listę uczniów, których oceny opiekun może przeglądać.
+\item Wybór przedmiotu.
+\item WiDz wyświetla listę wszystkich ocen danego ucznia z danego przedmiotu wraz z ich krótkimi opisami.
+\end{enumerate}
+\end{document}
