@@ -1,0 +1,223 @@
+\documentclass[12pt,leqno,twoside]{mwart}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{a4wide}
+\usepackage[titles]{tocloft}
+
+\widowpenalty=10000
+\clubpenalty=10000
+\raggedbottom
+
+%---------------------------------------------------------------------------------
+%paginy!
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1. }}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\fancyhead[LE]{WiDz -- Wirtualny Dziennik. Koncepcja ogólna}
+\fancyhead[RO]{\rightmark}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{}
+\fancyfoot[CE]{\thepage}
+\fancyfoot[CO]{\thepage}
+\addtolength{\headheight}{1.5pt} % pionowy odstep na kreske
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.0pt}
+%--------------------------------------------------------------------------------
+
+%\makeatletter
+%\renewcommand{\@biblabel}[1]{\quad #1.}
+%\makeatother
+
+\renewcommand{\figurename}{Rys.}
+\renewcommand{\labelitemi}{-}
+
+%\makeatletter
+%\renewcommand{\@pnumwidth}{1.75em}
+%\renewcommand{\@tocrmarg}{2.75em}
+%\makeatother
+
+%\setlength{\cftbeforechapskip}{2ex}
+%\setlength{\cftbeforesecskip}{0.5ex}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+Instytut Informatyki Uniwersytetu Wrocławskiego \\
+Studencka Pracownia Inżynierii Oprogramowania, G4 \\
+\vspace{4cm}
+\Large Michał Kopacz, Mateusz Nahalewicz, Karol Bajko \\
+\vspace{0.5cm}
+\huge Dokumentacja projektu \mbox{\textbf{WiDz -- Wirtualny Dziennik}} \\ \Large Koncepcja ogólna\\
+\vspace{1cm}
+\normalsize Wersja 1.1
+\vfill
+\normalsize Wrocław 2009
+\end{center}
+\end{titlepage}
+
+\newpage
+\vfill
+\begin{table}[tb]
+	\centering
+	\caption{Historia zmian w~dokumencie}
+		\begin{tabular}{|r|c|c|p{5,5cm}|l|}
+		\hline
+		Lp. 	& Data       & Nr wersji 	& Autor           		& Zmiana \\ \hline
+		1.   	& 2009-11-01 & 1.0       	& \mbox{Mateusz Nahalewicz,} \mbox{Michał Kopacz,} \mbox{Karol Bajko} & Utworzenie dokumentu \\ \hline
+		2.   	& 2009-11-24 & 1.1       	& \mbox{Mateusz Nahalewicz}, \mbox{Karol Bajko} & Korekta \\ \hline
+		\end{tabular}
+\end{table}
+
+\clearpage
+\thispagestyle{fancy}
+\fancyhead{}
+\fancyhead[RO]{Spis treści}
+\tableofcontents
+\newpage
+
+%--------------------------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1. }}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\fancyhead[LE]{WiDz -- Wirtualny Dziennik. Koncepcja ogólna}
+\fancyhead[RO]{\rightmark}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{}
+\fancyfoot[CE]{\thepage}
+\fancyfoot[CO]{\thepage}
+\addtolength{\headheight}{1.5pt} % pionowy odstep na kreske
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.0pt}
+%--------------------------------------------------------------------------------
+
+\section{Wprowadzenie}
+\subsection{Cel dokumentu}
+\noindent Celem niniejszego dokumentu jest analiza oraz określenie głównych funkcji programu WiDz. Skupia się on na analizie potrzeb użytkowników oraz możliwościach ich zaspokojenia.\\
+
+\subsection{Ogólny opis aplikacji WiDz}
+\noindent WiDz to narzędzie wspomagające realizację przez szkołę funkcji wychowawczych i~edukacyjnych, usprawniające śledzenie postępów uczniów, umożliwiające skuteczne ograniczenie nadmiaru biurokracji oraz ulepszenie przepływu informacji w~szkole. Główną funkcją programu WiDz jest kontrola frekwencji uczniów i~ich postępów w~nauce.\\
+\indent Aplikacja pełni rolę elektronicznego dziennika, który oprócz możliwości tradycyjnego dziennika, takich jak przegląd ocen, rejestrowanie uwag o~zachowaniu i~postawach uczniów, dostarcza nowych funkcji, ułatwiających pracę nauczyciela i~szkoły. Funkcje te to m.in. elektroniczne płatności, różne formy kontaktu z~opiekunami ucznia, jak powiadamiania drogą SMS-ową i~mailową oraz obszerny system statystyk i~raportów przygotowany z~myślą o~każdym użytkowniku.\\
+\indent Szybka, bieżąca wymiana informacji pomiędzy szkołą a~domem, nieograniczona w~czasie, jak w~wypadku wywiadówek oraz stały dostęp do ocen ucznia z~możliwością szczegółowej analizy postępów w~nauce to główne korzyści płynące z~korzystania z~WiDz-a przez opiekunów.
+
+\section{Opis użytkownika}
+\subsection{Dane statystyczne dotyczące użytkowników i~rynku}
+\noindent Rocznik statystyczny \cite{GUS} podaje, że w~roku szkolnym 2008/09 w~Polsce było 14067 szkół podstawowych, 7204 gimnazjów oraz 2386 liceów ogólnokształcących. Do szkół podstawowych uczęszczało 2294,4 tys. uczniów, do gimnazjów 1381,4 tys. uczniów, a~do liceów ogólnokształcących 688,0 tys. uczniów.\\
+\indent Dane dotyczące uczniów dają także pewne informacje o~ilości opiekunów posyłających swoich podopiecznych do wyżej wymienionych szkół.\\
+\indent Co więcej, procentowy udział komputerów z~dostępem do Internetu (w stosunku do wszystkich komputerów w~szkołach) w~szkołach podstawowych, gimnazjach oraz liceach ogólnokształcących wynosił odpowiednio: 88\%, 95\% oraz 97\%, a~udziały te z~roku na rok rosną.\\
+\indent Potencjalnych użytkowników jest zatem bardzo dużo. Należy również uwzględnić nauczycieli, którzy będą użytkownikami programu. Poza tym użytkowanie dziennika elektronicznego nie jest w~szkołach częstym zjawiskiem, ale sytuacja ta będzie z pewnością się zmieniać po tym, jak weszło w życie Rozporządzenie Ministra Edukacji Narodowej~\cite{RME}, które m.in. zezwala placówkom szkolnym prowadzenie dzienników wyłącznie w formie elektronicznej. \\
+\indent Ilość oprogramowania mającego podobne możliwości do naszego jest trudna do oszacowania. Przeszukiwanie Internetu skłania nas do wniosku, że tylko kilkanaście programów jest stosowanych na szerszą skalę (w więcej niż kilku szkołach). Rosną zatem szanse na powodzenie naszego przedsięwzięcia.\\
+
+\subsection{Opis użytkowników}
+\noindent Docelowymi użytkownikami aplikacji są nauczyciele, uczniowie oraz ich rodzice lub opiekunowie. Są to osoby w~różnym wieku (dzieci, młodzież i~osoby dorosłe), o~różnym doświadczeniu w~obsłudze komputera.\\
+\indent Nauczyciel w~szkole, w~której używa się tradycyjnych dzienników, ma ogrom pracy związanej z semestralnymi podsumowaniami oraz z przepisywaniem ocen na kartki przed wywiadówką. W~szkole z~elektronicznym dziennikiem stosowne raporty, gotowe do drukowania, są generowane automatycznie. W~placówkach, które nie korzystają z~podobnych programów, kontakt nauczyciela z~rodzicem jest najczęściej utrudniony.\\
+\indent Uczeń, którego szkoła korzysta wyłącznie z tradycyjnych dzienników, często nie zna dokładnie swoich ocen. Może to prowadzić do wielu nieporozumień.\\
+\indent Opiekunowie często aż do wywiadówki wykazują się niewielką wiedzą dotyczącą ocen ucznia. Kwestia kontrolowania obecności na lekcjach wygląda na ogół jeszcze gorzej. Skrajnie beznadziejna jest sytuacja, w~której uczeń świadomie nie powiadamia opiekuna o~wywiadówce, a~nauczyciel nie jest w~stanie szybko skontaktować się z~opiekunem.\\
+
+\subsection{Podstawowe potrzeby użytkownika}
+\noindent Prawem, a~nawet obowiązkiem nauczyciela jest powiadamianie opiekuna o~postępach w~nauce oraz frekwencji ucznia. w~tej sytuacji nauczycielowi jest potrzebny szybki i~niezawodny sposób komunikacji. Ponadto nauczycielowi przydałby się program, który przygotowałby odpowiednie statystyki, pomocne przy wybieraniu kandydata do odpowiedzi przy tablicy.\\
+\indent Uczeń oczekuje od programu zwięzłej i~przejrzystej prezentacji jego ocen, frekwencji oraz planu lekcji.\\
+\indent Opiekunowi potrzebna jest szybka i~niezawodna komunikacja z nauczycielem. Chce mieć na bieżąco wgląd w~oceny i~frekwencję. Ponadto regulowanie wszelkich opłat na rzecz szkoły powinno przebiegać za pośrednictwem Internetu.\\
+\subsection{Rozwiązania alternatywne i~konkurencyjne}
+\noindent Przeszukiwanie Internetu skłania do wniosku, że obecnie na rynku oprogramowania brakuje programów takich jak WiDz – aplikacji rozbudowanej, a~zarazem łatwej w~obsłudze, taniej i~działającej wszędzie tam, gdzie można przeglądać strony internetowe. Istnieją wprawdzie produkty alternatywne, np. \textit{wywiadowka.com}\footnote{Zob. http://www.wywiadowka.com}, \textit{E-dzienniki}\footnote{Zob. http://www.e-dzienniki.net}, \textit{E-Sofokles}\footnote{Zob. http://www.esofokles.pl}, \textit{e-Dziennik}\footnote{Zob. http://www.e-dziennik.com.pl}, \textit{Elektroniczny Dziennik Edukatora}\footnote{Zob. http://www.edukator.org.pl/dziennik.php}, \textit{Librus}\footnote{Zob. http://www.dziennik.librus.pl}, jednakże mają one zazwyczaj szereg wad.\\
+\indent Przykładowo programy \textit{E-dzienniki}, \textit{E-Sofokles} oraz \textit{e-Dziennik} wymagają instalacji. Z kolei \textit{Elektroniczny Dziennik Edukatora} do funkcjonowania w~pełnym zakresie wymaga arkusza kalkulacyjnego Microsoft Excel.\\
+\indent Największymi konkurentami, oferującymi funkcje zbliżone do możliwości naszego programu są projekty \textit{Librus} oraz \textit{wywiadowka.com}. Żaden z nich natomiast nie oferuje systemu ankiet oraz nie umożliwia, aby  wszelkie opłaty związane ze szkołą, były regulowane za pośrednictwem witryny internetowej.
+
+\section{Ogólny opis programu WiDz}
+%\subsection{Schemat produktu}
+\subsection{Określenie pozycji produktu na rynku}
+\noindent Aplikacja WiDz jest oprogramowaniem przeznaczonym dla osób związanych z jednostkami szkolnymi, tj. uczniów, opiekunów i~nauczycieli.
+%\subsection{Podsumowanie możliwości}
+\subsection{Założenia i~zależności}
+\noindent WiDz z założenia jest programem prostym w~użytkowaniu, przeznaczonym dla osób o~zróżnicowanych umiejętnościach w~zakresie obsługi komputera. WiDz wymaga podstawowej znajomości obsługi przeglądarki internetowej. Dostęp do WiDz-a nie wymaga od użytkownika specjalistycznego sprzętu ani dodatkowego oprogramowania. Program można uruchomić w~większości obecnie używanych systemów operacyjnych, np. Windows, Linux, MacOS.
+\subsection{Koszty i~ceny}
+\noindent WiDz jest programem bezpłatnym, dostępnym na licencji GNU GPL\footnote{Zob. http://www.gnu.org.pl/text/licencja-gnu.html}. Aby z niego korzystać, należy zaopatrzyć się w~bezpłatne oprogramowanie Ruby on Rails\footnote{Środowisko ramowe (ang. \textit{framework}) tworzenia aplikacji internetowych, wydane na licencji X11}. Jedyne koszty, które musi ponieść klient, to zakup serwera, na którym WiDz zostanie zainstalowany (rozdz.~\ref{SPRZET}).
+
+\section{Cechy programu}
+\subsection{Możliwość przeglądania przez ucznia swoich ocen, frekwencji oraz planu zajęć}
+\noindent Uczeń ma wgląd wyłącznie w~swoje dane.\\
+\subsection{Możliwość przeglądania przez opiekuna ocen, frekwencji oraz planu zajęć}
+\noindent Opiekun ma wgląd tylko w~dane swoich podopiecznych. Za pomocą programu WiDz może też usprawiedliwić ich nieobecności.\\
+\subsection{Możliwość łatwego kontaktu na drodze nauczyciel--opiekun}
+\noindent Używający programu WiDz nauczyciel ma możliwość łatwego kontaktu z~opiekunem za pośrednictwem Internetu lub wiadomości SMS, której generowanie program umożliwia. Głównymi zaletami takiego rozwiązania jest duża niezawodność oraz fakt, że wymiana informacji odbywa się bezpośrednio między opiekunem a~nauczycielem (bez pośrednictwa ucznia).
+\subsection{Statystyki dotyczące uczniów danej klasy, dostępne dla nauczycieli}
+\noindent Nauczyciel ma wgląd wyłącznie w~statystyki klas, w~których uczy. Dane te mogą mu pomóc, we wcześniejszym powiadomieniu opiekunów o~braku postępów w~nauce uczniów, a~także o~nieusprawiedliwionych nieobecnościach. Gdy uczniowi zagraża powtarzanie klasy, program wyśle automatycznie SMS-a adresowanego do opiekuna. Statystyki ułatwiają wybór kandydata do odpowiedzi.
+\subsection{Uiszczanie opłat na rzecz szkoły}
+\noindent Opiekun może uregulować wszelkie opłaty związane z usługami dydaktycznymi oraz innymi formami aktywności placówki, na przykład wycieczki szoklne, ubezpieczenie, komitet rodzicielski, itp.
+\subsection{Możliwość oceny zajęć}
+\noindent Uczeń ma prawo wypowiedzenia się na temat zajęć, na które uczęszcza. Poza tym będzie można przeprowadzać anonimowe ankiety, dotyczące prowadzenia przedmiotów przez poszczególnych nauczycieli.
+\subsection{Możliwość nadania wiadomości w~kąciku klasowym}
+\noindent Każda klasa ma swój kącik w~programie WiDz. Wiadomości w~nim gromadzą nauczyciele lub uczniowie danej klasy.
+
+\section{Podstawowe przypadki użycia}
+\noindent Przypadki użycia realizowane są przez 5 aktorów: uczeń, opiekun, nauczyciel, wychowawca klasy, administrator.
+
+
+\subsection{Przegląd ocen}
+\begin{description}
+\item \textbf{Aktor: nauczyciel}\\
+Nauczyciel po kliknięciu w~zakładkę ,,Dziennik'' widzi listę przedmiotów, które prowadzi oraz dla każdego przedmiotu listę klas, w~których ten przedmiot prowadzi. Po wybraniu przedmiotu i~klasy może przeglądać oceny uczniów danej klasy, a~także dodawać nowe i~zmieniać aktualne stopnie, przypisując im odpowiedni typ, na przykład: kartkówka.\\
+\item \textbf{Aktor: uczeń, opiekun}\\
+Uczeń <opiekun> klikając na zakładkę ,,Moje oceny'' <,,Oceny dziecka''>, widzi listę przedmiotów, na które uczęszcza. Po wybraniu przedmiotu rozwija się szczegółowy spis ocen (wraz z~komentarzami). Uczeń <opiekun> ma możliwość filtrowania ocen po typie oceny, dacie wystawienia itp.
+\end{description}
+
+\subsection{Nieobecności ucznia}
+\begin{description}
+\item \textbf{Aktor: opiekun}\\
+Opiekun, klikając w~zakładkę ,,Nieobecności'', widzi listę wszystkich przedmiotów, na których została zanotowana nieobecność ucznia. Klikając na przedmiot, ukazuje mu się lista nieobecności -- przy każdej jest przycisk ,,Czy usprawiedliwić nieobecność?''. Po kliknięciu na przycisk, wpisaniu komentarza i~potwierdzeniu wiadomość trafia do wychowawcy, który może je zaakceptować (lub odrzucić).\\
+\item \textbf{Aktor: wychowawca klasy}\\
+Wychowawca, oprócz usprawiedliwienia nieobecności ucznia, ma możliwość akceptowania usprawiedliwień wysłanych przez rodziców ucznia. Lista takich usprawiedliwień jest widoczna w~zakładce ,,Oczekujące usprawiedliwienia''.
+\end{description}
+
+\subsection{Zdalne płatności}
+\begin{description}
+\item \textbf{Aktor: opiekun}\\
+Opiekun, wchodząc w~zakładkę ,,Płatności'', ma możliwość uregulowania opłat związanych ze szkołą (m.in. za wycieczki, ubezpieczenie). W~tym celu wybiera z~listy interesującą go pozycję, za którą chce zapłacić, po czym zostaje połączony z~systemem PayPal\footnote{Zob. http://www.paypal.com}, za pomocą którego dokonuje płatności.
+\end{description}
+
+\subsection{Statystyki}
+\begin{description}
+\item \textbf{Aktor: nauczyciel}\\
+Nauczyciel, wybierając zakładkę ,,Statystyki'', ma możliwość podglądu danych statystycznych każdego ucznia, dotyczących każdego przedmiotu, który prowadzi. Dane statystyczne zawierają m.in.: przewidywaną ocenę końcową ucznia z~przedmiotu; wykres postępów ucznia (co do tygodnia), liczonych na podstawie ocen ucznia; sugestie, czy dany uczeń powinien zostać odpytany.
+\end{description}
+
+\section{Inne wymagania dotyczące programu WiDz}\label{SPRZET}
+\subsection{Spełniane normy}
+\noindent Program zostanie wykonany zgodnie z~standardami tworzenia aplikacji internetowych, zdefiniowanymi przez organizację World Wide Web Consortium\footnote{Zob. http://www.w3.org/TR/} (w skrócie W3C), z wykorzystaniem środowiska ramowego \textit{Ruby on Rails}, które zostało w~całości zaprojektowane przy użyciu języka Ruby.
+
+\subsection{Wymagania stawiane serwerowi}
+\noindent Serwer, na którym zostanie uruchomiony WiDz, będzie zawierał interpreter języka Ruby, menadżera pakietów RubyGems do zarządzania bibliotekami, koniecznymi do uruchomienia aplikacji, oprogramowanie serwerowe HTTP Apache z~dodatkowymi modułami umożliwiającymi współpracę z~\textit{Ruby on Rails} oraz SZBD MySQL, który będzie przechowywał wszelkie potrzebne informacje o~uczniach i~ich postępach w~nauce.
+
+\subsection{Licencjonowanie i~instalowanie}
+\noindent WiDz będzie rozprowadzany na licencji GNU General Public License, która dopuszcza wprowadzanie zmian w~kodzie źródłowymi i~ zapewnia dużą swobodę w~dostosowywaniu programu do wymogów klienta.
+
+\subsection{Wymagania stawiane klientowi}
+\noindent Aby korzystać z WiDz-a, klient musi być w~nim zarejestrowany, posiadać sprawne łącze internetowe i~zainstalowaną przeglądarkę internetową.
+
+\subsection{Wymagania wydajnościowe}
+\noindent Do programu WiDz będzie miało dostęp bardzo dużo osób, jest więc ważne, aby serwer, na którym zostanie uruchomiony program, miał dużą przepływowość.
+ 
+\section{Wymagania dokumentacyjne}
+\subsection{Wymagania dokumentacyjne}
+\noindent Wraz z programem WiDz jest dostępna aktualna dokumentacja użytkowa i~programowa. Oba dokumenty są dostępne wraz z kodem źródłowym programu.
+\subsection{Pomoc zdalna}
+\noindent Na stronie głównej witryny programu jest dostępne forum dyskusyjne oraz prosty formularz, w~którym można zgłaszać problemy z WiDz.
+
+%\section{Zakres odpowiedzialności autorów}
+
+\section{Słownik}
+\noindent Słownik terminów użytych w~dokumencie znajduje się w~\cite{SLO}.
+
+\begin{thebibliography}{99}
+\bibitem{GUS} Główny Urząd Statystyczny, {\it Mały rocznik demograficzny 2009}. Warszawa, Zakład Wydawnictw Statystycznych 2009.
+
+\bibitem{RME} Rozporządzenie Ministra Edukacji Narodowej z dnia 16 lipca 2009 r. \textbf{zmieniające rozporządzenie w sprawie sposobu prowadzenia przez publiczne przedszkola, szkoły i~placówki dokumentacji przebiegu nauczania, działalności 	wychowawczej i~opiekuńczej}. (Dziennik Ustaw Nr 116, poz. 977).
+
+\bibitem{SLO} Michał Kopacz, Mateusz Nahalewicz, Karol Bajko, {\it Dokumentacja projektu WiDz -- Wirtualny Dziennik. Słownik}. Wrocław, SPIO IIUWr 2009.
+\end{thebibliography}
+
+\end{document}

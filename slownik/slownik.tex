@@ -1,0 +1,93 @@
+\documentclass[12pt,leqno,twoside]{mwart}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{a4wide}
+
+\widowpenalty=10000
+\clubpenalty=10000
+\raggedbottom
+
+%---------------------------------------------------------------------------------
+%paginy!
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1. }}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\fancyhead[LE]{WiDz -- Wirtualny Dziennik. Koncepcja ogólna}
+\fancyhead[RO]{\rightmark}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{}
+\fancyfoot[CE]{\thepage}
+\fancyfoot[CO]{\thepage}
+\addtolength{\headheight}{1.5pt} % pionowy odstep na kreske
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.0pt}
+%--------------------------------------------------------------------------------
+
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad #1.}
+\makeatother
+
+\renewcommand{\figurename}{Rys.}
+\renewcommand{\labelitemi}{-}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+Instytut Informatyki Uniwersytetu Wrocławskiego \\
+Studencka Pracownia Inżynierii Oprogramowania, G4 \\
+\vspace{4cm}
+\Large Michał Kopacz, Mateusz Nahalewicz, Karol Bajko \\
+\vspace{0.5cm}
+\huge Dokumentacja projektu \mbox{\textbf{WiDz -- Wirtualny Dziennik}} \\ \Large Słownik\\
+\vspace{1cm}
+\normalsize Wersja 1.0
+\vfill
+\normalsize Wrocław 2009
+\end{center}
+\end{titlepage}
+
+\newpage
+
+\begin{table}
+	\centering
+	\caption{Historia zmian w~dokumencie}
+		\begin{tabular}{|r|c|c|l|l|}
+		\hline
+		Lp. 	& Data       & Nr wersji 	& Autor           		& Zmiana \\ \hline
+		1.   	& 2009-11-24 & 1.0       	& Karol Bajko & Utworzenie dokumentu \\ \hline
+		\end{tabular}
+\end{table}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Słownik}
+%\noindent Słownik terminów użytych w~dokumencie znajduje się w~\cite{SLO}.
+\noindent Poniżej wyjaśniamy wybrane terminy użyte w dokumentacji projektu WiDz.
+
+\begin{description}
+\item[API]-- zbiór procedur umożliwiających komunikację programu z~biblioteką bądź serwisem który go udostępnia i~korzystaniu z~ich usług\\
+\item[dziennik elektroniczny]-- program komputerowy służący do rejestracji wszelkich informacji o~uczniu i zajęciach\\
+\item[frekwencja]-- \\
+\item[gilosz]-- \\
+\item[HTTPS]-- \\
+\item[login]-- \\
+\item[ocena opisowa]-- \\
+\item[PayPal]-- oprogramowanie umożliwiające dokonywanie bezpiecznych płatności i przelewów w~Internecie\\
+\item[PDF]-- \\
+\item[Ruby]-- język obiektowy, opracowano w~nim ramę Ruby on Rails\\
+\item[Ruby on Rails]-- rama tworzenia aplikacji internetowych w~języku Ruby\\
+\item[SSL]-- \\
+\item[środowisko ramowe (rama, ang. \textit{framework})]-- program wspomagający tworzenie oprogramowania, jego rozwój i testowanie\\
+\item[TSL]-- \\
+\item[wiadomość prywatna]-- \\
+\end{description}
+
+\end{document}
