@@ -3,3 +3,6 @@
 *.aux
 *~
 *.swp
+*.pdf
+*.dvi
+*.ps
