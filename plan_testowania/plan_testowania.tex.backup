@@ -1,0 +1,127 @@
+\documentclass[12pt,leqno,twoside]{mwart}
+\usepackage[utf8x]{inputenc}
+\usepackage{polski}
+\usepackage{a4wide}
+\usepackage{url}
+
+\widowpenalty=10000
+\clubpenalty=10000
+\raggedbottom
+
+%---------------------------------------------------------------------------------
+%paginy!
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1. }}
+\fancyhead[LE]{WiDz -- Wirtualny Dziennik. Specyfikacja wymagań}
+\fancyhead[RO]{\rightmark}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{}
+\fancyfoot[CE]{\thepage}
+\fancyfoot[CO]{\thepage}
+\addtolength{\headheight}{1.5pt} % pionowy odstep na kreske
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.0pt}
+%--------------------------------------------------------------------------------
+
+%\makeatletter
+%\renewcommand{\@biblabel}[1]{\quad #1.}
+%\makeatother
+
+\renewcommand{\figurename}{Rys.}
+\renewcommand{\labelitemi}{-}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+Instytut Informatyki Uniwersytetu Wrocławskiego \\
+Studencka Pracownia Inżynierii Oprogramowania, G4 \\
+\vspace{4cm}
+\Large Michał Kopacz, Mateusz Nahalewicz, Karol Bajko \\
+\vspace{0.5cm}
+\huge Dokumentacja projektu \mbox{\textbf{WiDz -- Wirtualny Dziennik}} \\ \Large Plan testowania\\
+\vspace{1cm}
+\normalsize Wersja 1.0
+\vfill
+\normalsize Wrocław 2010
+\end{center}
+\end{titlepage}
+
+\newpage
+
+\begin{table}
+	\centering
+	\caption{Historia zmian w~dokumencie}
+		\begin{tabular}{|r|c|c|l|l|}
+		\hline
+		Lp. 	& Data       & Nr wersji 	& Autorzy           		& Zmiana \\ \hline
+		1.   	& 2010-01-10 & 1.0       	& Michał Kopacz & Utworzenie dokumentu \\ \hline
+		\end{tabular}
+\end{table}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Wprowadzenie}
+\subsection{Cel dokumentu}
+\noindent Celem dokumentu jest określenie zakresu testów sprawdzających zgodność programu WiDz ze specyfikacją wymagań opianych w dokumencie \cite{WYM}, oraz wydajność i bezpieczeństwo podczas używania programu. Testy weryfikują również funkcje poszczególnych części programu i~spójnoś między nimi. Przeprowadzenie testów ma za zadanie zapewnić najwyższą jakość programu WiDz. \\
+\subsection{Fazy testów}
+\noindent Testowanie progamu WiDz przebiega zgodnie z~założeniami modelu V. Zaletą modelu V jest fakt, że dwie najważniejsze fazy: projektowanie i weryfikacja, nie następują po sobie, ale są wykonywane równolegle. \\
+\indent Testy będą planowane przed wykonaniem każdej iteracji budowy programu. Będą obejmować sprawdzenie każdego modułu z~osobna, oraz przetestowanie spójności modułów po zakończeniu iteracji. Gotowy program zostanie poddany całościowym testom systemowym po zakończeniu fazy budowy.
+
+\section{Rodzaje testów}
+\subsection{Testy modułowe}
+\noindent Testy modułowe programu WiDz są projektowane w oparciu o bibliotekę RSpec.\footnote{Biblioteka BDD (ang. BDD --- \textit{Behavior-Driven Development}) dla progarmu napisanego w języku Ruby, umożliwia pisanie testów modułowych} \\
+
+\subsubsection{Testy brzegowe}
+\noindent Testy brzegowe pozwalają wykryć i przetestować obszary, w których prawdopodobieństwo niepoprawnego działania programu WiDz jest największe. Podczas testowania zostaną sprawdzone warunki brzegowe powstałe na skutek: 
+\begin{itemize}
+	\item wprowadzenia całkowicie błędnych lub niespójnych danych wejściowych, 
+	\item nieprawidłowo sformatowanych danych, np. adres e-mail wpisywany podczas rejestracji użytkownika w programie WiDz,
+	\item pojawienia się wartości znacznie przekraczających oczekiwania, np. ocena wpisywana do dziennika,
+	\item pojawienia się duplikatów na listach, np. podczas wyświetlania listy uczniów danej klasy,
+	\item zakłócenia przewidywanego porządku zdarzeń, np. próby wygenerowania raportu przed zalogowaniem się.
+\end{itemize} 
+\subsection{Testy integracyjne}
+\subsubsection{Testy funkcjonalności w oparciu o przypadki użycia}
+\noindent Testy funkjonalności i~zgodności ze specyfikacją wymagań programu WiDz, są przeporwadzane za pomocą przypadków testowych, stworzonych na bazie przypadków użycia, określonych w~dokumencie \cite{PU}. \\
+\indent Testy sprawdzaja działanie programu poprzez interfejs użytkownika. Sprawdzana jest reakcja programu, zarówno na poprawne jak i niepoprawne zachowania użykownika. \\
+\subsubsection{Testy wydajnościowe}
+\noindent Podczas testów wydajnościowych programu WiDz zostaną zwerifikowane:
+\begin{itemize}
+	\item czas odpowiedzi programu przy dużym obiążeniu serwera,
+	\item czas odpowiedzi bazy danych przy odczycie dużej ilości danych,
+	\item odporność bazy danych na przeciążenie zbyt dużą ilością danych do zapisu.
+\end{itemize}
+\indent Testy są wykonywane po każdej fazie iteracji, dzięki czemu uzyskana zostaje informacja o~tym, które elementy programu należy poprawić, aby program działał szybciej i stabilniej. \\
+\subsubsection{Testy spójności komponentów}
+\subsubsection{Testy regresywne}
+\noindent Testy regresywne są przeprowadzane po każdym zakończeniu iteracji. Maja za zadanie sprawdzić poprawne działanie programu po wprowadzeniu zmian i naprawie błedów.\\
+\subsection{Testy systemowe}
+\subsubsection{Testy bezpieczeństwa}
+\noindent Testy bezpieczeństwa mają za zadanie sprawdzić odporność programu na próby:
+\begin{itemize}
+	\item włamania do bazy danych metodą SQL-Injection,
+	\item zalogowania się na konto użytkownika bez znajomości hasła,
+	\item uzyskania przez użytkownika nie przysługujących mu uprawnień,
+	\item zablokowania dostępu do programu poprzez przeciążenie programu.
+\end{itemize}
+\subsubsection{Testy dotyczące interfejsu użytkownika}
+\noindent Interfejs użytkownika programu WiDz jest sprawdzany pod wzdlędem intuicyjnej nawigacji, szybkości dostepu do poszukiwanej informacji oraz zrozumiałej dla użytkownika komunikacji. \\
+\subsubsection{Testy konfiguracyjne}
+\noindent Podczas testów sprawdzane jest prawidłowe działanie i~dostępność programu WiDz w~zależności od systemu operacyjnego (Linux, Windows, MacOS), oraz przeglądarki użytkownika (Safari, Firefox, Internet Explorer, Konqueror, Opera, Google Chrome).\\
+\subsection{Testy akceptujące}
+\section{Zasoby}
+\subsection{Testerzy}
+\subsection{Sprzęt}
+\subsection{Oprogramowanie}
+\begin{thebibliography}{9}
+	\bibitem{WYM} Michał Kopacz, Karol Bajko, Mateusz Nahalewicz: {\it Dokumentacja projektu WiDz -- Wirtualny Dziennik. Specyfikacja wymagań}. Wrocław, SPIO IIUWr 2009.
+	\bibitem{PU} Michał Kopacz, Karol Bajko, Mateusz Nahalewicz: {\it Dokumentacja projektu WiDz -- Wirtualny Dziennik. Analiza przypadków użycia}. Wrocław, SPIO IIUWr 2009.
+\end{thebibliography}
+\end{document}
