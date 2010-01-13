@@ -4,6 +4,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{a4wide}
 \usepackage[titles]{tocloft}
+\usepackage{multirow}
 
 \widowpenalty=10000
 \clubpenalty=10000
@@ -76,13 +77,13 @@ Studencka Pracownia Inżynierii Oprogramowania, G4 \\
 \newpage
 
 \section{Wstęp}
-\noindent Niniejszy dokument ma na celu przedstawienie czytelnikowi szacunkowego kosztu i czasu realizacji projektu WiDz. Posłużymy się w tym celu metodą punktów funkcyjnych, które pomogą określić wielkość projektu już na etapie analizy.
+\noindent Niniejszy dokument ma na celu przedstawienie czytelnikowi szacunkowego kosztu i~czasu realizacji projektu WiDz. Posłużymy się w~tym celu metodą punktów funkcyjnych, które pomogą określić wielkość projektu już na etapie analizy.
 
 \section{Punkty funkcyjne}
-\noindent Istnieją trzy metody liczenia punktów funkcyjnych w zależności od tego, jakiego typu jest mierzona aplikacja. Tutaj wykorzystamy sposób liczenia punktów dla nowopowstającego programu. W takim podejściu liczenie punktów przebiega w dwóch fazach:
+\noindent Istnieją trzy metody liczenia punktów funkcyjnych w~zależności od tego, jakiego typu jest mierzona aplikacja. Tutaj wykorzystamy sposób liczenia punktów dla nowopowstającego programu. W takim podejściu liczenie punktów przebiega w~dwóch fazach:
 
 \subsection{Szacowanie rozmiaru funkcjonalnego}
-\noindent Szacowanie rozmiaru funkcjonalnego polega na określeniu poziomu złożoności funkcji w poszczególnych częściach programu (pliki wewnętrzne, interfejs zewnętrzny, transakcje). Każdą pojedynczą funkcję należy sklasyfikować jednym z trzech poziomów trudności -- prosty, średni lub złożony. W zależności od typu i przydzielonego poziomu trudności, dana funkcja otrzymuje określoną liczbę punktów, których łączna suma stanowi nieostateczne punkty funkcyjne programu (NPF).
+\noindent Szacowanie rozmiaru funkcjonalnego polega na określeniu poziomu złożoności funkcji w~poszczególnych częściach programu (pliki wewnętrzne, interfejs zewnętrzny, transakcje). Każdą pojedynczą funkcję należy sklasyfikować jednym z~trzech poziomów trudności -- prosty, średni lub złożony. W zależności od typu i~przydzielonego poziomu trudności, dana funkcja otrzymuje określoną liczbę punktów, których łączna suma stanowi nieostateczne punkty funkcyjne programu (NPF).
 \begin{table}[h]
 	\centering
 	\caption{Szacowanie punktów funkcyjnych dla plików wewnętrznych}
@@ -127,7 +128,9 @@ Studencka Pracownia Inżynierii Oprogramowania, G4 \\
 		\rule{0pt}{3ex}
 		\begin{tabular}{ccc|c|c|}
 		\hline
-		\multicolumn{1}{|c|}{\textbf{Typ funkcji}}	& \multicolumn{1}{c|}{\textbf{Proste}}	& \textbf{Średnie} &	\textbf{Złożone} &	\textbf{Suma} \\ \hline
+		
+		\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{Typ funkcji}}}	& \multicolumn{3}{c|}{\textbf{Złożoność}}	&	\multirow{2}{*}{\textbf{Suma}} \\ \cline{2-4}
+		\multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{\textbf{Proste}}	& \textbf{Średnie} &	\textbf{Złożone} & \\ \hline
 		\multicolumn{1}{|c|}{Wejście} 		& \multicolumn{1}{c|}{$12 \times 3$} & $9 \times 4$ & $3 \times 6$ & 90 \\ \hline
 		\multicolumn{1}{|c|}{Wyjście}		& \multicolumn{1}{c|}{$0 \times 4$} & $4 \times 5$ & $6 \times 7$ & 62 \\ \hline
 		\multicolumn{1}{|c|}{Zapytanie}		& \multicolumn{1}{c|}{$10 \times 3$} & $2 \times 4$ & $2 \times 6$ & 50 \\ \hline
@@ -135,19 +138,19 @@ Studencka Pracownia Inżynierii Oprogramowania, G4 \\
 		\end{tabular}
 	\label{pkt_fun_trans}
 \end{table}
-Na podstawie obliczeń z tabel \ref{pkt_fun_struktury}, \ref{pkt_fun_zew}, \ref{pkt_fun_trans} wartość ta wynosi 345.
+Na podstawie obliczeń z~tabel \ref{pkt_fun_struktury}, \ref{pkt_fun_zew}, \ref{pkt_fun_trans} wartość ta wynosi 345.
 
-Aby otrzymać ostateczną liczbę punktów funkcyjnych, wymagany jest jeszcze czynnik korygujący, wynikający z tzw. parametrów wpływu.
+Aby otrzymać ostateczną liczbę punktów funkcyjnych, wymagany jest jeszcze czynnik korygujący, wynikający z~tzw. parametrów wpływu.
 
 \subsection{Liczenie czynnika korygującego}
-\noindent Czynnik korygujący uwzględnia wewnętrzną złożoność systemu, która nie jest związana bezpośrednio z funkcjami programu. Oblicza się go korzystając ze wzoru
+\noindent Czynnik korygujący uwzględnia wewnętrzną złożoność systemu, która nie jest związana bezpośrednio z~funkcjami programu. Oblicza się go korzystając ze wzoru
 \begin{displaymath}
 CK = 0,65 + (0,01 \cdot \sum_{i=1}^{14} C_i)
 \end{displaymath}
 gdzie $C_i$ określa współczynnik wpływu, który przyjmuje wartości całkowite ze zbioru $[0,5]$, gdzie $0$ - oznacza brak wpływu, $5$ - silny wpływ. Współczynniki są określane na podstawie 14 czynników, które mogą wpłynąć na zwiększenie stopnia skomplikowania programu.
 \begin{table}[h]
 	\centering
-	\caption{Szacowanie współczynników wpływu}
+	\caption{Określenie współczynników wpływu}
 		\rule{0pt}{3ex}
 		\begin{tabular}{|c|c|}
 		\hline
@@ -174,18 +177,18 @@ Na podstawie tabeli \ref{wsp_wplywu}, wartość \textit{CK} wynosi 1,1. Całkowi
 \begin{displaymath}
 PF = CK \cdot NPF = 1,1 \cdot 345 \approx 380
 \end{displaymath}
-W celu otrzymania szacunkowej liczby wierszy kodu, należy przemnożyć całkowitą liczbę punktów funkcyjnych przez współczynnik, który określa ,,zwięzłość'' języka. Szacujemy że dla ramy projektowej Ruby on Rails wynosi ono 30\footnote{Liczba wierszy kodu przypadających na jeden punkt funkcyjny.}. W rezultacie otrzymujemy liczbę wierszy kodu wynoszącą około 11480.
+W~celu otrzymania szacunkowej liczby wierszy kodu, należy przemnożyć całkowitą liczbę punktów funkcyjnych przez współczynnik, który określa ,,zwięzłość'' języka. Szacujemy że dla ramy projektowej Ruby on Rails wynosi ono 30\footnote{Średnia liczba wierszy kodu przypadających na jeden punkt funkcyjny.}. W~rezultacie otrzymujemy oszacowanie równe 11480 wierszy kodu.
 
-\section{Pracochłonność implementacji i testowania}
-\noindent Program WiDz jest realizowany przez trzyosobowy zespół programistów, jednego testera i kierownika projektu. Szacujemy, że w ciągu 8-godzinnego dnia roboczego powstanie ok. 80 nowych wierszy kodu przypadających na jednego programistę. Daje to nam wynik ok. 240 wierszy wypracowanych przez zespół każdego dnia. Przy łącznym oszacowaniu projektu na 11480 wierszy kodu, daje to nam ok. 50 roboczych dni. Szacujemy, że tyle samo dni roboczych potrzeba dodatkowo na przetestowanie programu i naprawę błędów. Łącznie daje to nam 100 dni roboczych na napisanie programu WiDz.
+\section{Pracochłonność implementacji i~testowania}
+\noindent Program WiDz jest realizowany przez trzyosobowy zespół programistów, jednego testera i~kierownika projektu. Szacujemy, że w~ciągu 8-godzinnego dnia roboczego powstanie ok. 80 nowych wierszy kodu przypadających na jednego programistę. Daje to nam wynik ok. 240 wierszy wypracowanych przez zespół każdego dnia. Przy łącznym oszacowaniu projektu na 11480 wierszy kodu, daje to nam ok. 50 roboczych dni. Szacujemy, że tyle samo dni roboczych potrzeba dodatkowo na przetestowanie programu i~naprawę błędów. Łącznie daje to nam 100 dni roboczych na napisanie programu WiDz.
 
-Koszty, jakie należy ponieść w procesie implementacji programu WiDz, to
+Koszty, jakie należy ponieść w~procesie implementacji programu WiDz, to
 \begin{itemize}
-\item \textbf{wynagrodzenie pracowników} (przy założeniu, że programista otrzymuje za godzinę pracy wynagrodzenie w wysokości 25zł brutto, tester 12zł brutto, kierownik projektu 35zł brutto, całkowity koszt wynagrodzeń dla pracowników: 57600zł brutto),
-\item \textbf{opłacenie serwera} (od 300 do 500zł/miesiąc, w zależności od wymagań),
+\item \textbf{wynagrodzenie pracowników} (przy założeniu, że programista otrzymuje za godzinę pracy wynagrodzenie w~wysokości 25zł brutto, tester 12zł brutto, kierownik projektu 35zł brutto, całkowity koszt wynagrodzeń dla pracowników: 57600zł brutto),
+\item \textbf{opłacenie serwera} (od 300 do 500zł/miesiąc, w~zależności od wymagań),
 \item \textbf{koszty motywacyjne zespołu} (materiały szkoleniowe, kawa, herbata -- od 100 do 300zł/miesiąc).
 \end{itemize}
-Całkowity kosz projektu powinien zamknąć się w kwocie 62000zł.
+Całkowity koszt projektu powinien zamknąć się w~kwocie 62000zł.
 
 \section{Słownik}
 \noindent Słownik terminów użytych w~dokumencie znajduje się w~\cite{SLO}.
