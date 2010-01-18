@@ -70,7 +70,7 @@ Studencka Pracownia Inżynierii Oprogramowania, G4 \\
 		\hline
 		Lp. 	& Data       & Nr wersji 	& Autorzy           		& Zmiana \\ \hline
 		1.   	& 2010-01-12 & 1.0       	& \mbox{Karol Bajko} & Utworzenie dokumentu \\ \hline
-		2.   	& 2010-01-10 & 1.1       	& \mbox{Mateusz Nahalewicz}, \mbox{Michał Kopacz} & Korekta \\ \hline
+		2.   	& 2010-01-10 & 1.1       	& Michał Kopacz, Mateusz Nahalewicz & Korekta \\ \hline
 		\end{tabular}
 \end{table}
 
@@ -78,7 +78,7 @@ Studencka Pracownia Inżynierii Oprogramowania, G4 \\
 \newpage
 
 \section{Wstęp}
-\noindent Niniejszy dokument ma na celu przedstawienie czytelnikowi szacunkowego kosztu i~czasu realizacji programu WiDz. Posłużymy się w~tym celu metodą punktów funkcyjnych, która pomaga określić wielkość programu już na etapie analizy. \\
+\noindent Niniejszy dokument ma na celu przedstawienie czytelnikowi szacunkowego kosztu i~czasu realizacji programu WiDz. Posłużymy się w~tym celu metodą punktów funkcyjnych, która pomoga określić wielkość programu już na etapie analizy. \\
 
 \section{Punkty funkcyjne}
 \noindent Istnieją trzy metody liczenia punktów funkcyjnych w~zależności od tego, jakiego typu jest mierzony program. Wykorzystamy sposób liczenia punktów funkcyjnych dla powstającego programu. W takim podejściu liczenie punktów funkcyjnych przebiega w~dwóch fazach, które opisano w kolejnych dwóch podpunktach. \\

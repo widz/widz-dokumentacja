@@ -89,7 +89,7 @@ Studencka Pracownia Inżynierii Oprogramowania, G4 \\
 \indent Serwer programu WiDz jest odpowiedzialny za umożliwienie ciągłego dostępu do programu WiDz każdemu użytkownikowi, bez względu na porę dnia. Odpowiada również za okresowe tworzenie kopii bezpieczeństwa danych znajdujących się w~bazie danych. 
 
 \subsection{Baza danych}
-\noindent Baza danych przechowuje wszystkie dane związane z~oferowanymi usługami programu WiDz. Zawiera wszystkie dane dotyczące nauczycieli oraz uczniów i opiekunów. Baza danych przechowuje m.in. dane o postępach uczniów w nauce, o dokonanych opłatach, bieżącym planie zajęć w szkole oraz archiwizuje wszelkie wiadomości przesyłane pomiędzy użytkownikami WiDz.\\
+\noindent Baza danych przechowuje wszystkie dane związane z~oferowanymi usługami programu WiDz. Zawiera wszystkie dane dotyczące nauczycieli oraz uczniów i opiekunów. Baza danych przechowuje m. in. dane o postępach uczniów w nauce, o dokonanych opłatach, bieżącym planie zajęć w szkole oraz archiwizuje wszelkie wiadomości przesyłane pomiędzy użytkownikami WiDz.\\
 \indent Baza danych  MySQL jest umieszczona na serwerze. Korzystać z~niej może wyłącznie program WiDz, który ma bezpośredni dostęp do danych w~niej umieszczonych. Komunikacja między programem a SZBD MySQL opiera się na języku zapytań SQL.
 
 \subsection{Pliki źródłowe}
@@ -219,7 +219,7 @@ Studencka Pracownia Inżynierii Oprogramowania, G4 \\
 \noindent Wykorzystując pamięć podręczną po stronie użytkownika do składowania tymczasowych danych, odciążamy serwer od nadmiaru zadań do wykonania, przerzucając ich część na użytkownika.
  
 \subsection{Stabilność}
-\noindent Język Ruby to jest ciągle rozwijany i ma wielu zwolenników ze względu na ramę projektową Ruby on Rails. Bardzo rozbudowana biblioteka do testowania RSpec\footnote{Biblioteka BDD (ang. BDD --- \textit{Behavior-Driven Development}) dla aplikacji języka Ruby, umożliwia pisanie testów jednostkowych, opisujących konkretne obiekty, jak i~testów w~postaci scenariuszy opisujących zadania, które powinna wykonać aplikacja.} pomaga tworzyć testy dokładnie odpowiadające specyfikacji projektu, przez co wyłapywanie błędów i~ich naprawa odbywa się bardzo szybko. Rozwój użytych technologii w~WiDz-u sprawia, że program będzie zawsze zgodny z~najnowszymi wersjami systemów operacyjnych.
+\noindent Język Ruby to jest ciągle rozwijany i ma wielu zwolenników ze względu na ramę projektową Ruby on Rails. Bardzo rozbudowana biblioteka do testowania RSpec\footnote{Biblioteka BDD (ang. BDD --- \textit{Behavior-Driven Development}) dla aplikacji języka Ruby, umożliwia pisanie testów modułowych, opisujących konkretne obiekty, jak i~testów w~postaci scenariuszy opisujących zadania, które powinna wykonać aplikacja.} pomaga tworzyć testy dokładnie odpowiadające specyfikacji projektu, przez co wyłapywanie błędów i~ich naprawa odbywa się bardzo szybko. Rozwój użytych technologii w~WiDz-u sprawia, że program będzie zawsze zgodny z~najnowszymi wersjami systemów operacyjnych.
 
 \subsection{Wygoda obsługi}
 \noindent Przejrzysty, intuicyjny interfejs sprawia, że użytkownik nie ma problemów z~swobodnym korzystaniem z~programu WiDz. Zastosowane języki HTML, CSS i JavaScript umożliwiają przyjazną interakcję z~użytkownikiem za pomocą przeglądarki internetowej. Bez względu na używany system operacyjny program zawsze wygląda tak samo.

@@ -14,7 +14,7 @@
 \pagestyle{fancy}
 \fancyhead{}
 \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1. }}
-\fancyhead[LE]{WiDz -- Wirtualny Dziennik. Specyfikacja wymagań}
+\fancyhead[LE]{WiDz -- Wirtualny Dziennik. Plan testowania}
 \fancyhead[RO]{\rightmark}
 \fancyfoot{} % clear all footer fields
 \fancyfoot[LE,RO]{}
@@ -43,7 +43,7 @@ Studencka Pracownia Inżynierii Oprogramowania, G4 \\
 \vspace{0.5cm}
 \huge Dokumentacja projektu \mbox{\textbf{WiDz -- Wirtualny Dziennik}} \\ \Large Plan testowania\\
 \vspace{1cm}
-\normalsize Wersja 1.0
+\normalsize Wersja 1.1
 \vfill
 \normalsize Wrocław 2010
 \end{center}
@@ -57,7 +57,8 @@ Studencka Pracownia Inżynierii Oprogramowania, G4 \\
 		\begin{tabular}{|r|c|c|l|l|}
 		\hline
 		Lp. 	& Data       & Nr wersji 	& Autorzy           		& Zmiana \\ \hline
-		1.   	& 2010-01-10 & 1.0       	& Michał Kopacz & Utworzenie dokumentu \\ \hline
+		1.   	& 2010-01-10 & 1.0       	& \mbox{Michał Kopacz} & Utworzenie dokumentu \\ \hline
+		2.   	& 2010-01-12 & 1.1       	& \mbox{Mateusz Nahalewicz} & Korekta \\ \hline
 		\end{tabular}
 \end{table}
 
@@ -70,20 +71,20 @@ Studencka Pracownia Inżynierii Oprogramowania, G4 \\
 \section{Wprowadzenie}
 \subsection{Cel dokumentu}
 \noindent Celem dokumentu jest określenie zakresu testów sprawdzających zgodność programu WiDz ze specyfikacją wymagań opisanych w dokumencie \cite{WYM}, oraz wydajność i bezpieczeństwo podczas używania programu. Testy weryfikują również funkcje poszczególnych części programu i~spójność między nimi. Przeprowadzenie testów ma za zadanie zapewnić najwyższą jakość programu WiDz. \\
-\subsection{Fazy testów}
-\noindent Testowanie programu WiDz przebiega zgodnie z~założeniami modelu V. Zaletą modelu V jest fakt, że dwie najważniejsze fazy: projektowanie i weryfikacja, nie następują po sobie, ale są wykonywane równolegle. \\
-\indent Testy będą planowane przed wykonaniem każdej iteracji budowy programu. Będą obejmować sprawdzenie każdego modułu z~osobna, oraz przetestowanie spójności modułów po zakończeniu iteracji. Gotowy program zostanie poddany całościowym testom systemowym po zakończeniu fazy budowy.
+\subsection{Etapy testów}
+\noindent Testowanie programu WiDz przebiega zgodnie z~założeniami modelu V. Zaletą modelu V jest fakt, że dwa najważniejsze etapy tj. projektowanie i weryfikacja, nie następują po sobie, ale są wykonywane równolegle. \\
+\indent Testy będą planowane przed wykonaniem każdej iteracji budowy programu. Będą obejmować sprawdzenie każdego modułu z~osobna oraz przetestowanie spójności modułów po zakończeniu iteracji. Gotowy program zostanie poddany całościowym testom systemowym po zakończeniu etapu budowy.
 
 \section{Rodzaje testów}
 \subsection{Testy modułowe}
-\noindent Testy modułowe programu WiDz są projektowane w oparciu o bibliotekę RSpec.\footnote{Biblioteka BDD (ang. BDD --- \textit{Behavior-Driven Development}) dla progarmu napisanego w języku Ruby, umożliwia pisanie testów modułowych} \\
+\noindent Testy modułowe programu WiDz są projektowane w oparciu o bibliotekę RSpec.\footnote{Biblioteka BDD (ang. BDD --- \textit{Behavior-Driven Development}) dla aplikacji języka Ruby, umożliwia pisanie testów modułowych, opisujących konkretne obiekty, jak i~testów w~postaci scenariuszy opisujących zadania, które powinna wykonać aplikacja.} \\
 
 \subsubsection{Testy brzegowe}
 \noindent Testy brzegowe pozwalają wykryć i przetestować obszary, w których prawdopodobieństwo niepoprawnego działania programu WiDz jest największe. Podczas testowania zostaną sprawdzone warunki brzegowe powstałe na skutek: 
 \begin{itemize}
 	\item wprowadzenia całkowicie błędnych lub niespójnych danych wejściowych, 
 	\item nieprawidłowo sformatowanych danych, np. adres e-mail wpisywany podczas rejestracji użytkownika w programie WiDz,
-	\item pojawienia się wartości znacznie przekraczających oczekiwania, np. ocena wpisywana do dziennika,
+	\item pojawienia się wartości przekraczających oczekiwania, np. ocena 7 wpisywana do dziennika,
 	\item pojawienia się duplikatów na listach, np. podczas wyświetlania listy uczniów danej klasy,
 	\item zakłócenia przewidywanego porządku zdarzeń, np. próby wygenerowania raportu przed zalogowaniem się.
 \end{itemize} 
@@ -98,32 +99,39 @@ Studencka Pracownia Inżynierii Oprogramowania, G4 \\
 	\item czas odpowiedzi bazy danych przy odczycie dużej ilości danych,
 	\item odporność bazy danych na przeciążenie zbyt dużą ilością danych do zapisu.
 \end{itemize}
-\indent Testy są wykonywane po każdej fazie iteracji, dzięki czemu uzyskana zostaje informacja o~tym, które elementy programu należy poprawić, aby program działał szybciej i stabilniej. \\
+\indent Testy są wykonywane po każdej fazie iteracji, dzięki czemu zostaje uzyskana informacja o~tym, które elementy programu należy poprawić, aby program działał szybciej i stabilniej. \\
 \subsubsection{Testy spójności komponentów}
-\noindent Testowanie spójności komponentów umożliwia sprawdzenie poprawnego przesyłu danych między komponentami. Sprawdzana jest również spójność danych w bazie danych. \\
+\noindent Testowanie spójności komponentów umożliwia sprawdzenie, czy przesył danych pomiędzy komponentami jest poprawny. Sprawdzana jest również spójność danych w bazie danych. \\
 \subsubsection{Testy regresywne}
-\noindent Testy regresywne są przeprowadzane po każdym zakończeniu iteracji. Maja za zadanie sprawdzić poprawne działanie programu po wprowadzeniu zmian i naprawie błędów.\\
+\noindent Testy regresywne są przeprowadzane po każdym zakończeniu iteracji. Mają za zadanie sprawdzić poprawne działanie programu po wprowadzeniu zmian i naprawie błędów.\\
 \subsection{Testy systemowe}
 \subsubsection{Testy bezpieczeństwa}
 \noindent Testy bezpieczeństwa mają za zadanie sprawdzić odporność programu na próby:
 \begin{itemize}
 	\item włamania do bazy danych metodą SQL-Injection,
 	\item zalogowania się na konto użytkownika bez znajomości hasła,
-	\item uzyskania przez użytkownika nie przysługujących mu uprawnień,
+	\item uzyskania przez użytkownika nieprzysługujących mu uprawnień,
 	\item zablokowania dostępu do programu poprzez przeciążenie programu.
 \end{itemize}
 \subsubsection{Testy dotyczące interfejsu użytkownika}
-\noindent Interfejs użytkownika programu WiDz jest sprawdzany pod względem intuicyjnej nawigacji, szybkości dostępu do poszukiwanej informacji oraz zrozumiałej dla użytkownika komunikacji. \\
+\noindent Interfejs użytkownika programu WiDz jest sprawdzany pod względem intuicyjnej nawigacji, szybkości dostępu do poszukiwanej informacji oraz zrozumiałych dla użytkownika komunikatów. \\
 \subsubsection{Testy konfiguracyjne}
-\noindent Podczas testów sprawdzane jest prawidłowe działanie i~dostępność programu WiDz w~zależności od systemu operacyjnego (Linux, Windows, MacOS), oraz przeglądarki użytkownika (Safari, Firefox, Internet Explorer, Konqueror, Opera, Google Chrome).\\
-\subsection{Testy akceptujące}
+\noindent Podczas testów konfiguracyjnych sprawdzane jest prawidłowe działanie programu WiDz w~zależności od systemu operacyjnego (Linux, Windows, Mac OS), oraz przeglądarki internetowej (Safari, Firefox, Internet Explorer, Konqueror, Opera, Google Chrome).\\
+\subsection{Testy akceptacyjne}
 \noindent Są przeprowadzane przez użytkowników programu WiDz. \\
 \section{Zasoby}
-\subsection{Testerzy}
 \subsection{Sprzęt}
+\noindent Program WiDz jest testowany z wykorzystaniem dwóch serwerów oraz trzech stacji klienckich. Pierwszy z serwerów spełnia minimalne wymagania sprzętowe, drugi, wymagania zalecane, określone w~dokumencie \cite{WYM}. Stacje klienckie spełniają następujące wymagania sprzętowe: \\
+	\indent procesor: 1 GHz, \\
+	\indent RAM: 512 MB, \\
+	\indent miejsce na dysku twardym: 50 GB. \\
 \subsection{Oprogramowanie}
+\noindent Na każdej stacji klienckiej jest zainstalowany jeden z następujących systemów operacyjnych: Windows, Linux, Mac OS. W systemach tych są zainstalowane następujące przeglądarki internetowe: \\
+	\indent Windows: Safari, Firefox, Internet Explorer, Opera, Google Chrome, \\
+	\indent Linux: Safari, Firefox, Opera, Google Chrome, Konqueror,\\
+	\indent Mac OS: Safari, Firefox, Opera, Google Chrome. \
 \section{Raporty}
-bugzilla
+\noindent Błędy wykryte w~czasie testowania będa rejestrowane przy pomocy oprogramowania\linebreak Bugzilla\footnote{Oprogramowanie umożliwiające tworzenie serwisu internetowego do raportowania błędów w dowolnym oprogramowaniu. Patrz \url{http://www.bugzilla.org/}}. \\
 \begin{thebibliography}{9}
 	\bibitem{WYM} Michał Kopacz, Karol Bajko, Mateusz Nahalewicz: {\it Dokumentacja projektu WiDz -- Wirtualny Dziennik. Specyfikacja wymagań}. Wrocław, SPIO IIUWr 2009.
 	\bibitem{PU} Michał Kopacz, Karol Bajko, Mateusz Nahalewicz: {\it Dokumentacja projektu WiDz -- Wirtualny Dziennik. Analiza przypadków użycia}. Wrocław, SPIO IIUWr 2009.

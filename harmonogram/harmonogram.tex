@@ -1,0 +1,164 @@
+\documentclass[12pt,leqno,twoside]{mwart}
+\usepackage[utf8x]{inputenc}
+\usepackage{polski}
+\usepackage{a4wide}
+\usepackage{url}
+\usepackage{array}
+\widowpenalty=10000
+\clubpenalty=10000
+\raggedbottom
+
+%---------------------------------------------------------------------------------
+%paginy!
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1. }}
+\fancyhead[LE]{WiDz -- Wirtualny Dziennik. Harmonogram}
+\fancyhead[RO]{\rightmark}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{}
+\fancyfoot[CE]{\thepage}
+\fancyfoot[CO]{\thepage}
+\addtolength{\headheight}{1.5pt} % pionowy odstep na kreske
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.0pt}
+%--------------------------------------------------------------------------------
+
+%\makeatletter
+%\renewcommand{\@biblabel}[1]{\quad #1.}
+%\makeatother
+
+\renewcommand{\figurename}{Rys.}
+\renewcommand{\labelitemi}{-}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+Instytut Informatyki Uniwersytetu Wrocławskiego \\
+Studencka Pracownia Inżynierii Oprogramowania, G4 \\
+\vspace{4cm}
+\Large Michał Kopacz, Mateusz Nahalewicz, Karol Bajko \\
+\vspace{0.5cm}
+\huge Dokumentacja projektu \mbox{\textbf{WiDz -- Wirtualny Dziennik}} \\ \Large Harmonogram\\
+\vspace{1cm}
+\normalsize Wersja 1.1
+\vfill
+\normalsize Wrocław 2010
+\end{center}
+\end{titlepage}
+
+\newpage
+
+\begin{table}
+	\centering
+	\caption{Historia zmian w~dokumencie}
+		\begin{tabular}{|r|c|c|l|l|}
+		\hline
+		Lp. 	& Data       & Nr wersji 	& Autorzy           		& Zmiana \\ \hline
+		1.   	& 2010-01-09 & 1.0       	& \mbox{Mateusz Nahalewicz} & Utworzenie dokumentu \\ \hline
+		2.   	& 2010-01-10 & 1.1       	& \mbox{Michał Kopacz} & Korekta \\ \hline
+		\end{tabular}
+\end{table}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+
+\section{Informacje ogólne}
+\noindent Budowanie programu WiDz podzielono na pięć etapów, które opisano poniżej. Zespół pracuje po osiem godzin dziennie przez pięć dni w tygodniu (od poniedziałku do piątku). Każdej fazie realizacji przedsięwzięcia przypisano datę jej rozpoczęcia oraz zakończenia. Czas realizacji projektu jest szacowany na około 5,5 miesiąca.\\
+
+
+\section{Etap analizy}
+\noindent Etap analizy składa się z ustalenia wymagań projektu, potrzeb użytkowników oraz podstawowych przypadków użycia, a także wyboru architektury sprzętowej i technologii w jakiej będzie tworzony program WiDz. Czas trwania etapu wynosi 8 dni roboczych.\\
+
+	%\centering
+		\begin{tabular}{m{8cm} c c}
+		
+		& \textbf{Data rozpoczęcia} & \textbf{Data zakończenia} \\ 
+		Analiza wymagań & 2009-10-12 & 2009-10-21 \\ 
+		\textbf{Ogółem} & \textbf{2009-10-12} & \textbf{2009-10-21} \\ 
+		\end{tabular}
+
+\section{Etap projektowania}
+\noindent Etap projektowania składa się z zaprojektowania struktury klas i bazy danych, sporządzenia dokładnej specyfikacji architektury sprzętowej, określenia związków między klasami oraz interfejsu użytkownika. Czas trwania etapu wynosi 26 dni roboczych.\\
+
+	%\centering
+		\begin{tabular}{m{8cm} c c}
+		
+		& \textbf{Data rozpoczęcia} & \textbf{Data zakończenia} \\ 
+		Projekt klas & 2009-10-22 & 2009-11-06 \\ 
+		Projekt bazy danych & 2009-11-09 & 2009-11-11 \\ 
+		Powiązanie klas & 2009-11-12 & 2008-11-17 \\ 
+		Specyfikacja sprzętu & 2009-11-18 & 2009-11-20 \\ 
+		Projekt interfejsu & 2009-11-23 & 2009-11-26 \\ 
+		\textbf{Ogółem} & \textbf{2009-10-22} & \textbf{2009-11-26} \\ 
+		\end{tabular}
+
+\section{Etap implementacji}
+\noindent Etap implementacji składa się z 10 iteracji. W trakcie kolejnych iteracji będą implementowane odpowiednie klasy i funkcje.\\
+
+	%\centering
+		\begin{tabular}{m{8cm} c c}
+		
+		& \textbf{Data rozpoczęcia} & \textbf{Data zakończenia} \\ 
+		System uwierzytelniania & 2009-11-27 & 2009-12-18 \\ 
+		Zakładanie dziennika & 2009-12-21 & 2010-01-08 \\ 
+		Modyfikowanie danych w dzienniku & 2010-01-11 & 2010-01-14 \\
+		Przeglądanie dziennika & 2010-01-15 & 2010-01-22 \\ 
+		Wprowadzanie i oglądanie planu zajęć & 2010-01-25 & 2010-01-28 \\ 		
+		System statystyk & 2010-01-29 & 2010-02-08 \\ 
+		System powiadomień & 2010-02-09 & 2010-02-19 \\ 
+		System oceny zajęć & 2010-02-22 & 2010-02-26 \\ 
+		System płatności & 2010-03-01 & 2010-03-09 \\ 
+		Kącik klasowy & 2010-03-10 & 2010-03-12 \\		
+		
+		\textbf{Ogółem} & \textbf{2009-11-27} & \textbf{2010-03-12} \\ 
+		\end{tabular}
+
+\section{Etap testowania}
+
+\noindent Testowanie programu WiDz przebiega zgodnie z założeniami modelu V. Zaletą modelu V
+jest fakt, że dwa najważniejsze etapy tj. implementacja i testowanie, nie następują po sobie,
+ale są wykonywane równolegle.\\
+
+	%\centering
+		\begin{tabular}{m{8cm} c c}
+		
+		& \textbf{Data rozpoczęcia} & \textbf{Data zakończenia} \\ 
+		System uwierzytelniania & 2009-11-27 & 2010-03-16 \\ 
+		Zakładanie dziennika & 2009-12-21 & 2010-03-16 \\ 
+		Modyfikowanie danych w dzienniku & 2010-01-11 & 2010-03-16 \\
+		Przeglądanie dziennika & 2010-01-15 & 2010-03-16 \\ 
+		Wprowadzanie i oglądanie planu zajęć & 2010-01-25 & 2010-03-16 \\ 		
+		System statystyk & 2010-01-29 & 2010-03-16 \\ 
+		System powiadomień & 2010-02-09 & 2010-03-16 \\ 
+		System oceny zajęć & 2010-02-22 & 2010-03-16 \\ 
+		System płatności & 2010-03-01 & 2010-03-16 \\ 
+		Kącik klasowy & 2010-03-10 & 2010-03-16 \\		
+		
+		\textbf{Ogółem} & \textbf{2009-11-27} & \textbf{2010-03-16} \\ 
+		\end{tabular}
+
+\section{Etap przekazania}
+\noindent Pierwszym krokiem w trakcie tego etapu jest zainstalowanie serwera, na którym będzie działał program WiDz. Następnie program WiDz jest instalowany na serwerze.\\
+
+	%\centering
+		\begin{tabular}{m{8cm} c c}
+		
+		& \textbf{Data rozpoczęcia} & \textbf{Data zakończenia} \\ 
+		Zainstalowanie serwera & 2010-03-17 & 2010-03-22 \\ 
+		Zainstalowanie programu WiDz & 2010-03-23 & 2010-03-26 \\ 
+		
+		\textbf{Ogółem} & \textbf{2010-03-17} & \textbf{2010-03-26} \\ 
+		\end{tabular}
+
+\section{Oddanie systemu}
+\noindent Planowanym dniem oddania programu WiDz do użytku jest 29 marca 2010.\\
+
+
+\end{document}

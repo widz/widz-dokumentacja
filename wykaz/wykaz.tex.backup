@@ -1,0 +1,72 @@
+\documentclass[12pt,leqno,twoside]{mwart}
+\usepackage[utf8x]{inputenc}
+\usepackage{polski}
+\usepackage{a4wide}
+\usepackage{url}
+
+\widowpenalty=10000
+\clubpenalty=10000
+\raggedbottom
+
+%---------------------------------------------------------------------------------
+%paginy!
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1. }}
+\fancyhead[LE]{WiDz -- Wirtualny Dziennik. Wykaz dokumentów}
+\fancyhead[RO]{\rightmark}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{}
+\fancyfoot[CE]{\thepage}
+\fancyfoot[CO]{\thepage}
+\addtolength{\headheight}{1.5pt} % pionowy odstep na kreske
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.0pt}
+%--------------------------------------------------------------------------------
+
+%\makeatletter
+%\renewcommand{\@biblabel}[1]{\quad #1.}
+%\makeatother
+
+\renewcommand{\figurename}{Rys.}
+\renewcommand{\labelitemi}{-}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+Instytut Informatyki Uniwersytetu Wrocławskiego \\
+Studencka Pracownia Inżynierii Oprogramowania, G4 \\
+\vspace{4cm}
+\Large Michał Kopacz, Mateusz Nahalewicz, Karol Bajko \\
+\vspace{0.5cm}
+\huge Dokumentacja projektu \mbox{\textbf{WiDz -- Wirtualny Dziennik}} \\ \Large Wykaz dokumentów\\
+\vspace{1cm}
+\normalsize Wersja 1.4
+\vfill
+\normalsize Wrocław 2010
+\end{center}
+\end{titlepage}
+
+\newpage
+
+\begin{table}
+	\centering
+	\caption{Historia zmian w~dokumencie}
+		\begin{tabular}{|r|c|c|l|l|}
+		\hline
+		Lp. 	& Data       & Nr wersji 	& Autorzy           		& Zmiana \\ \hline
+		1.   	& 2010-01-18 & 1.0       	& Michał Kopacz & Utworzenie dokumentu \\ \hline
+		\end{tabular}
+\end{table}
+
+\newpage
+\vspace{3cm}
+Poniżej przedstawiamy wykaz dokumentów dotyczących programu WiDz.
+\vspace{0.2cm}
+\begin{enumerate}
+  \item Michał Kopacz, Karol Bajko, Mateusz Nahalewicz: {\it Dokumentacja projektu WiDz -- Wirtualny Dziennik. Wykaz dokumentów}. Wrocław, SPIO IIUWr 2009
+\end{enumerate}
+	
+\end{document}
