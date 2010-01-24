@@ -5,6 +5,8 @@
 \usepackage{a4wide}
 \usepackage[titles]{tocloft}
 \usepackage{multirow}
+\usepackage{setspace}
+\usepackage{array}
 
 \widowpenalty=10000
 \clubpenalty=10000
@@ -54,7 +56,7 @@ Studencka Pracownia Inżynierii Oprogramowania, G4 \\
 \vspace{0.5cm}
 \huge Dokumentacja projektu \mbox{\textbf{WiDz -- Wirtualny Dziennik}} \\ \Large Oszacowanie kosztów projektu\\
 \vspace{1cm}
-\normalsize Wersja 1.1
+\normalsize Wersja 1.2
 \vfill
 \normalsize Wrocław 2010
 \end{center}
@@ -71,6 +73,7 @@ Studencka Pracownia Inżynierii Oprogramowania, G4 \\
 		Lp. 	& Data       & Nr wersji 	& Autorzy           		& Zmiana \\ \hline
 		1.   	& 2010-01-12 & 1.0       	& \mbox{Karol Bajko} & Utworzenie dokumentu \\ \hline
 		2.   	& 2010-01-10 & 1.1       	& \mbox{Mateusz Nahalewicz}, \mbox{Michał Kopacz} & Korekta \\ \hline
+		3.   	& 2010-01-24 & 1.2       	& \mbox{Karol Bajko} & Korekta \\ \hline
 		\end{tabular}
 \end{table}
 
@@ -78,16 +81,17 @@ Studencka Pracownia Inżynierii Oprogramowania, G4 \\
 \newpage
 
 \section{Wstęp}
-\noindent Niniejszy dokument ma na celu przedstawienie czytelnikowi szacunkowego kosztu i~czasu realizacji programu WiDz. Posłużymy się w~tym celu metodą punktów funkcyjnych, która pomaga określić wielkość programu już na etapie analizy. \\
+\noindent Niniejszy dokument ma na celu przedstawienie szacunkowego kosztu i~czasu realizacji programu WiDz. Posłużymy się metodą punktów funkcyjnych, która pomaga określić wielkość programu już na etapie analizy. \\
 
 \section{Punkty funkcyjne}
-\noindent Istnieją trzy metody liczenia punktów funkcyjnych w~zależności od tego, jakiego typu jest mierzony program. Wykorzystamy sposób liczenia punktów funkcyjnych dla powstającego programu. W takim podejściu liczenie punktów funkcyjnych przebiega w~dwóch fazach, które opisano w kolejnych dwóch podpunktach. \\
+\noindent Istnieją trzy metody liczenia punktów funkcyjnych w~zależności od tego, jakiego typu jest mierzony program. Wykorzystamy sposób liczenia punktów funkcyjnych dla powstającego programu. W takim podejściu liczenie punktów funkcyjnych przebiega w~dwóch fazach, które opisano w~kolejnych dwóch podrozdziałach.\\
 
 \subsection{Szacowanie rozmiaru funkcjonalnego}
-\noindent Szacowanie rozmiaru funkcjonalnego polega na określeniu poziomu złożoności funkcji w~poszczególnych częściach programu (pliki wewnętrzne, interfejs zewnętrzny, transakcje). Każdą pojedynczą funkcję należy sklasyfikować jednym z~trzech poziomów trudności -- prosty, średni lub złożony. W zależności od typu i~przydzielonego poziomu trudności, dana funkcja otrzymuje określoną liczbę punktów, których łączna suma stanowi nieostateczne punkty funkcyjne programu (NPF).\\
+\noindent Szacowanie rozmiaru funkcjonalnego polega na określeniu poziomu złożoności funkcji w~poszczególnych częściach programu (pliki wewnętrzne, interfejs zewnętrzny, transakcje). Każdą pojedynczą funkcję należy sklasyfikować jednym z~trzech poziomów trudności: prosty, średni lub złożony. W zależności od typu i~przydzielonego poziomu trudności, dana funkcja otrzymuje określoną liczbę punktów, których łączna suma stanowi nieostateczne punkty funkcyjne programu (NPF).\\
 \begin{table}[h]
 	\centering
 	\caption{Szacowanie punktów funkcyjnych dla plików wewnętrznych}
+		\renewcommand{\arraystretch}{1.2}
 		\rule{0pt}{3ex}
 		\begin{tabular}{c|c|c|}
 		\hline
@@ -114,6 +118,7 @@ Studencka Pracownia Inżynierii Oprogramowania, G4 \\
 	\centering
 	\caption{Szacowanie punktów funkcyjnych dla interfejsów zewnętrznych}
 		\rule{0pt}{3ex}
+		\renewcommand{\arraystretch}{1.2}
 		\begin{tabular}{c|c|c|}
 		\hline
 		\multicolumn{1}{|c|}{\textbf{Interfejs zewnętrzny}} & \textbf{Złożoność} & \textbf{NPF} \\ \hline
@@ -126,6 +131,7 @@ Studencka Pracownia Inżynierii Oprogramowania, G4 \\
 \begin{table}[h]
 	\centering
 	\caption{Szacowanie punktów funkcyjnych dla transakcji}
+		\renewcommand{\arraystretch}{1.2}
 		\rule{0pt}{3ex}
 		\begin{tabular}{ccc|c|c|}
 		\hline
@@ -144,14 +150,15 @@ Na podstawie danych z~tabel \ref{pkt_fun_struktury}, \ref{pkt_fun_zew}, \ref{pkt
 Aby otrzymać ostateczną liczbę punktów funkcyjnych, jest wymagany jeszcze czynnik korygujący, wynikający z~tzw. parametrów wpływu.
 
 \subsection{Liczenie czynnika korygującego}
-\noindent Czynnik korygujący uwzględnia wewnętrzną złożoność systemu, która nie jest związana bezpośrednio z~funkcjami programu. Oblicza się go korzystając ze wzoru:
+\noindent Czynnik korygujący uwzględnia wewnętrzną złożoność systemu, która nie jest związana bezpośrednio z~funkcjami programu. Oblicza się go ze wzoru:
 \begin{displaymath}
 CK = 0,65 + (0,01 \cdot \sum_{i=1}^{14} C_i)
 \end{displaymath}
-gdzie $C_i$ określa współczynnik wpływu, który przyjmuje wartości całkowite ze zbioru $[0,5]$, gdzie $0$ - oznacza brak wpływu, $5$ - silny wpływ. Współczynniki są określane na podstawie 14 czynników, które mogą wpłynąć na zwiększenie stopnia skomplikowania programu.
+gdzie $C_i$ określa współczynnik wpływu, który przyjmuje wartości całkowite ze zbioru $[0,5]$, przy czym $0$ oznacza brak wpływu, $5$ silny wpływ. Współczynniki $C_i$ są określane na podstawie 14 czynników, które mogą wpłynąć na zwiększenie stopnia skomplikowania programu.
 \begin{table}[h]
 	\centering
 	\caption{Określenie współczynników wpływu}
+		\renewcommand{\arraystretch}{1.2}
 		\rule{0pt}{3ex}
 		\begin{tabular}{|c|c|}
 		\hline
@@ -174,28 +181,28 @@ gdzie $C_i$ określa współczynnik wpływu, który przyjmuje wartości całkowi
 	\label{wsp_wplywu}
 \end{table}
 
-Na podstawie danych z~tabeli \ref{wsp_wplywu}, wartość \textit{CK} wynosi 1,1. Całkowita liczba punktów funkcyjnych to iloczyn nieostatecznych punktów funkcyjnych oraz współczynnika korygującego:
+Na podstawie danych z~tabeli \ref{wsp_wplywu} wartość \textit{CK} wynosi 1,1. Całkowita liczba punktów funkcyjnych to iloczyn nieostatecznych punktów funkcyjnych oraz współczynnika korygującego:
 \begin{displaymath}
 PF = CK \cdot NPF = 1,1 \cdot 345 \approx 380
 \end{displaymath}
-W~celu otrzymania szacunkowej liczby wierszy kodu, należy przemnożyć całkowitą liczbę punktów funkcyjnych przez współczynnik, który określa ,,zwięzłość'' języka. Szacujemy że dla ramy projektowej Ruby on Rails wynosi on 30\footnote{Średnia liczba wierszy kodu przypadających na jeden punkt funkcyjny.}. W~rezultacie otrzymujemy oszacowanie równe 11480 wierszy kodu.
+W~celu otrzymania szacunkowej liczby wierszy kodu należy przemnożyć całkowitą liczbę punktów funkcyjnych przez współczynnik, który określa ,,zwięzłość'' języka. Szacujemy że dla ramy projektowej Ruby on Rails wynosi on 30\footnote{Średnia liczba wierszy kodu przypadających na jeden punkt funkcyjny.}. W~rezultacie otrzymujemy oszacowanie równe 11480 wierszy kodu.
 
 \section{Pracochłonność implementacji i~testowania}
-\noindent Program WiDz jest realizowany przez trzyosobowy zespół programistów, jednego testera i~kierownika projektu. Szacujemy, że w~ciągu 8-godzinnego dnia roboczego powstanie ok. 80 nowych wierszy kodu przypadających na jednego programistę. Daje to nam wynik ok. 240 wierszy kodu wypracowanych przez zespół każdego dnia. Przy łącznym oszacowaniu projektu na 11480 wierszy kodu, daje to nam ok. 50 roboczych dni. Szacujemy, że tyle samo dni roboczych potrzeba dodatkowo na przetestowanie programu i~naprawę błędów. Łącznie daje to nam 100 dni roboczych na napisanie programu WiDz.
+\noindent Program WiDz jest realizowany przez trzyosobowy zespół programistów, jednego testera i~kierownika projektu. Szacujemy, że w~ciągu 8-godzinnego dnia roboczego powstanie około 80 nowych wierszy kodu przypadających na jednego programistę. Daje to około 240 wierszy kodu wypracowanych przez zespół każdego dnia. Przy łącznym oszacowaniu projektu na 11480 wierszy kodu, daje 50 roboczych dni. Szacujemy, że tyle samo dni roboczych potrzeba dodatkowo na przetestowanie programu i~naprawę błędów. Łącznie wynosi to 100 dni roboczych na napisanie programu WiDz.
 
-Koszty w~procesie implementacji programu WiDz to
+Koszty w~procesie implementacji programu WiDz:
 \begin{itemize}
-\item \textbf{wynagrodzenie pracowników} (przy założeniu, że programista otrzymuje za godzinę pracy wynagrodzenie w~wysokości 25zł brutto, tester 12zł brutto, kierownik projektu 35zł brutto, całkowity koszt wynagrodzeń dla pracowników: 57600zł brutto),
-\item \textbf{opłacenie serwera} (od 300 do 500zł/miesiąc, w~zależności od wymagań),
-\item \textbf{koszty motywacyjne zespołu} (materiały szkoleniowe, kawa, herbata -- od 100 do 300zł/miesiąc).
+\item \textbf{wynagrodzenie pracowników} (przy założeniu, że programista otrzymuje za godzinę pracy wynagrodzenie w~wysokości 25\,zł brutto, tester 12\,zł brutto, kierownik projektu 35\,zł brutto, całkowity koszt wynagrodzeń dla pracowników: 57600\,zł brutto),
+\item \textbf{opłacenie serwera} (od 300 do 500\,zł/miesiąc w~zależności od wymagań),
+\item \textbf{koszty motywacyjne zespołu} (materiały szkoleniowe, kawa, herbata -- od 100 do 300\,zł/miesiąc).
 \end{itemize}
-Całkowity koszt projektu powinien zamknąć się w~kwocie 62000zł.
+Całkowity koszt implementacji powinien zamknąć się w~kwocie 62000\,zł.
 
 \section{Słownik}
 \noindent Słownik terminów użytych w~dokumencie znajduje się w~\cite{SLO}.
 
 \begin{thebibliography}{99}
-\bibitem{SLO} Michał Kopacz, Mateusz Nahalewicz, Karol Bajko, {\it Dokumentacja projektu WiDz -- Wirtualny Dziennik. Słownik}. Wrocław, SPIO IIUWr 2009.
+\bibitem{SLO} Michał Kopacz, Mateusz Nahalewicz, Karol Bajko: {\it Dokumentacja projektu WiDz -- Wirtualny Dziennik. Słownik}. Wrocław, SPIO IIUWr 2009.
 \end{thebibliography}
 
 \end{document}
