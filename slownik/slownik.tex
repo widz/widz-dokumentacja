@@ -16,7 +16,6 @@
 \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1. }}
 \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
 \fancyhead[LE]{WiDz -- Wirtualny Dziennik. Koncepcja ogólna}
-\fancyhead[RO]{\rightmark}
 \fancyfoot{} % clear all footer fields
 \fancyfoot[LE,RO]{}
 \fancyfoot[CE]{\thepage}
@@ -44,7 +43,7 @@ Studencka Pracownia Inżynierii Oprogramowania, G4 \\
 \vspace{0.5cm}
 \huge Dokumentacja projektu \mbox{\textbf{WiDz -- Wirtualny Dziennik}} \\ \Large Słownik\\
 \vspace{1cm}
-\normalsize Wersja 1.0
+\normalsize Wersja 1.1
 \vfill
 \normalsize Wrocław 2009
 \end{center}
@@ -59,39 +58,38 @@ Studencka Pracownia Inżynierii Oprogramowania, G4 \\
 		\hline
 		Lp. 	& Data       & Nr wersji 	& Autor           		& Zmiana \\ \hline
 		1.   	& 2009-11-24 & 1.0       	& Karol Bajko & Utworzenie dokumentu \\ \hline
+		2.   	& 2010-01-20 & 1.1       	& Karol Bajko & Korekta \\ \hline
 		\end{tabular}
 \end{table}
-
-\newpage
-
-\tableofcontents
-
-\newpage
 
 \section{Słownik}
 \noindent Poniżej wyjaśniamy wybrane terminy użyte w dokumentacji programu WiDz.
 
 \begin{description}
-\item[API]-- zbiór procedur umożliwiających komunikację programu z~biblioteką bądź serwisem który go udostępnia i~korzystaniu z~ich usług\\
+\item[API]-- zbiór procedur umożliwiających komunikację programu z~biblioteką lub serwisem który je udostępnia, a następnie korzystaniu z~ich usług\\
+\item[BDD (ang. \textit{Behavior-Driven Development})]-- technika tworzenia programu opierająca się na pisaniu testów jednostkowych, opisujących konkretne obiekty oraz testów w postaci scenariuszy opisujących zadania, które powinna wykonać aplikacja przed jej właściwym kodowaniem; następnym krokiem jest napisanie fragmentu programu, aby testy przeszły pomyślnie\\
+\item[CSRF (ang. \textit{Cross-Site Request Forgery})]-- sposób ataku na serwis internetowy, który polega na wymuszeniu użytkownika mającego dostęp do zamkniętych części serwisu na wykonanie niebezpiecznego kodu\\
+\item[CSS (ang. \textit{Cascading Style Sheets})]-- język służący do opisu wyglądu stron WWW\\
 \item[dziennik elektroniczny]-- program komputerowy służący do rejestracji wszelkich informacji o~uczniu i zajęciach\\
-\item[frekwencja]-- \\
-\item[ocena opisowa]-- \\
+\item[gilosz]-- grawerowana ozdoba, trudna do podrobienia, wykorzystywana jako tło w dokumentach, np. papierach wartościowych, świadectwach szkolnych\\
+\item[HTML (ang. \textit{Hypertext Markup Language})]-- język wykorzystywany do tworzenia stron WWW\\
+\item[HTTP (ang. \textit{Hypertext Transfer Protocol})]-- protokół typu klient/serwer dla sieci WWW, pozwala przeglądarkom na dostęp do serwerów i pobieranie dokumentów napisanych w języku HTML\\
+\item[HTTP Apache]-- oprogramowanie serwerowe protokołu HTTP\\
+\item[HTTPS]-- szyfrowana wersja protokołu HTTP z wykorzystaniem metody szyfrowania danych SSL\\
+\item[JavaScript]-- język programowania służący do budowania interaktywnych z użytkownikiem części serwisu WWW\\
+\item[OpenSSL]-- biblioteka kryptograficzna, umożliwia wykorzystanie metody szyfrowania danych SSL do komunikacji pomiędzy serwerem WWW a użytkownikiem\\
 \item[PayPal]-- oprogramowanie umożliwiające dokonywanie bezpiecznych płatności i przelewów w~Internecie\\
+\item[REST (ang. \textit{Representational State Transfer})]-- styl projektowania serwisu WWW, który bazuje na myśli, że sieć WWW to ogromny zbiór zasobów, a sam serwis WWW to program który obserwuje i modyfikuje stan tych zasobów\\
 \item[Ruby]-- język obiektowy, opracowano w~nim ramę Ruby on Rails\\
 \item[Ruby on Rails]-- rama tworzenia aplikacji internetowych w~języku Ruby\\
-\item[środowisko ramowe (rama, ang. \textit{framework})]-- program wspomagający tworzenie oprogramowania, jego rozwój i testowanie\\
-\item[wiadomość prywatna]-- \\
-\item[TSL]-- \\
-\item[SHA-1]-- \\
-\item[XSS]-- \\
-\item[CSRF]-- \\
-\item[SQL Injection]-- \\
-\item[OpenSSL]-- \\
-\item[HTTPS]-- \\
-\item[HTTP Apache]-- \\
-\item[SZDB MySQL]-- \\
-\item[gilosz]-- \\
-
+\item[SHA-1]-- funkcja skrótu, generująca unikalny ciąg znaków stałej długości dla dowolnie dużej wiadomości, minimalna zmiana w treści wiadomości powoduje wygenerowanie innego ciągu znaków\\
+\item[SSL (ang. \textit{Secure Socket Layer})]-- protokół służący do bezpiecznej transmisji danych\\
+\item[SQL Injection]-- luka w zabezpieczeniu serwisu internetowego, które umożliwia osobie atakującej na dostęp do zablokowanych danych w bazie danych\\
+\item[SZDB MySQL]-- system zarządzania bazą danych MySQL\\
+\item[środowisko ramowe (rama, ang. \textit{framework})]-- oprogramowanie wspomagające tworzenie innych programów, ich rozwój i testowanie\\
+\item[TSL (ang. \textit{Transport Layer Security})]-- metoda szyfrowania danych przesyłanych pomiędzy serwerem WWW a użytkownikiem; rozwinięta wersja protokołu SSL\\
+\item[wiadomość prywatna]-- wiadomość skierowana do konkretnej osoby, żadna inna osoba nie ma wglądu do treści wiadomości\\
+\item[XSS (ang. \textit{Cross-Site Scripting})]-- sposób ataku na serwis internetowy, który umożliwia wprowadzenie niebezpiecznego kodu na atakowaną stronę\\
 \end{description}
 
 \end{document}
