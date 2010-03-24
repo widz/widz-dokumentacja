@@ -7,7 +7,9 @@
 \widowpenalty=10000
 \clubpenalty=10000
 \raggedbottom
-
+\makeatletter
+\renewcommand*{\@biblabel}[1]{\hfill#1.}
+\makeatother
 %---------------------------------------------------------------------------------
 %paginy!
 \usepackage{fancyhdr}
@@ -72,25 +74,25 @@ Studencka Pracownia Inżynierii Oprogramowania, G4 \\
 \newpage
 
 \section{Ogólny opis programu WiDz}
-\noindent Program WiDz pełni rolę elektronicznego dziennika, który oprócz możliwości tradycyjnego dziennika, takich jak przegląd ocen, rejestrowanie uwag o~zachowaniu i~postawach uczniów, wpisywanie tematów lekcji, dostarcza nowych funkcji ułatwiających pracę nauczyciela i~szkoły. Dzięki temu program WiDz całkowicie zastępuje tradycyjny dziennik\footnote{Zgodnie z~rozporządzeniem Ministra Edukacji Narodowej z~dnia 16 lipca 2009 r. zmieniającym rozporządzenie w~sprawie sposobu prowadzenia przez publiczne przedszkola, szkoły i~placówki dokumentacji przebiegu nauczania, działalności wychowawczej i~opiekuńczej oraz rodzajów tej dokumentacji (Dz. U. 2009, nr 116, poz. 997), które zezwala m.in. na całkowite zastąpienie w~placówce szkolnej dziennika w~formie papierowej na wersję elektroniczną.}, a~dodatkowo usprawnia komunikację między opiekunami a~szkołą. Opiekunowie mają dostęp do informacji o~ocenach i~frekwencji podopiecznych, przeglądając je w~domu, nie muszą w~tym celu udawać się do placówki szkolnej. Dodatkowo są informowani o~ważnych wydarzeniach drogą esemesową oraz mają możliwość regulowania opłat na rzecz szkoły za pośrednictwem Internetu.\\
+\noindent Program WiDz pełni funkcję elektronicznego dziennika, który oprócz możliwości tradycyjnego dziennika, takich jak przegląd ocen, rejestrowanie uwag o~zachowaniu i~postawach uczniów, wpisywanie tematów lekcji, dostarcza nowych funkcji ułatwiających pracę nauczyciela i~szkoły. Dzięki temu program WiDz całkowicie zastępuje tradycyjny dziennik\footnote{Zgodnie z~rozporządzeniem Ministra Edukacji Narodowej z~dnia 16 lipca 2009 r. zmieniającym rozporządzenie w~sprawie sposobu prowadzenia przez publiczne przedszkola, szkoły i~placówki dokumentacji przebiegu nauczania, działalności wychowawczej i~opiekuńczej oraz rodzajów tej dokumentacji (Dz. U. 2009, nr 116, poz. 997), które zezwala m.in. na całkowite zastąpienie w~placówce szkolnej dziennika w~formie papierowej na wersję elektroniczną.}, a~dodatkowo usprawnia komunikację między opiekunami a~szkołą. Opiekunowie mają dostęp do informacji o~ocenach i~frekwencji podopiecznych, przeglądając je w~domu, nie muszą w~tym celu udawać się do placówki szkolnej. Dodatkowo są informowani o~ważnych wydarzeniach drogą esemesową oraz mają możliwość regulowania opłat na rzecz szkoły za pośrednictwem Internetu.\\
 \indent Raz wprowadzone informacje są wielokrotnie wykorzystywane w~programie, przykładowo podczas generowania raportów ze statystykami o~osiągnięciach w~nauce ucznia, klasy, a~nawet całej szkoły oraz podczas drukowania świadectw.\\
 \indent Dostęp do programu WiDz wymaga upoważnienia, a~każdy zapis w~programie  kojarzony jest z~osobą, która go wprowadziła. Program pamięta również historię wprowadzonych zmian, co ma na celu zwiększenie bezpieczeństwa korzystania z~programu.
 
 \section{Charakterystyka użytkowników}\label{CHARAKTER_UZYTK}
 \subsection{Uczeń}
-\noindent Uczeń ma wgląd jedynie w~swoje dane. Może przeglądać oceny z~przedmiotów, na które uczęszcza, oraz nieobecności na tych przedmiotach.
+\noindent Uczeń ma wgląd tylko w~swoje dane. Może przeglądać oceny z~przedmiotów, na które uczęszcza, oraz nieobecności na tych przedmiotach.
 
 \subsection{Opiekun}
-\noindent Opiekun ma wgląd jedynie w~dane ucznia, nad którym sprawuje opiekę. Może przeglądać oceny z~przedmiotów, na które uczęszcza uczeń oraz nieobecności na tych przedmiotach. Ma również możliwość usprawiedliwiania nieobecności.
+\noindent Opiekun ma wgląd tylko w~dane ucznia, nad którym sprawuje opiekę. Może przeglądać oceny z~przedmiotów, na które uczęszcza uczeń oraz nieobecności na tych przedmiotach. Ma również możliwość usprawiedliwiania nieobecności.
 
 \subsection{Nauczyciel}
-\noindent Nauczyciel ma wgląd w~dane przedmiotów, które prowadzi. Może dodawać, modyfikować i~usuwać oceny i~nieobecności uczniów w~ramach tych przedmiotów.
+\noindent Nauczyciel ma wgląd w~dane przedmiotów, które prowadzi. Może dodawać, modyfikować i~usuwać oceny i~nieobecności uczniów dotyczące tych przedmiotów.
 
 \subsection{Wychowawca klasy}
 \noindent Wychowawca klasy ma wgląd w~oceny i~nieobecności uczniów swojej klasy. Może dodatkowo usprawiedliwiać nieobecności.
 
 \subsection{Dyrektor}
-\noindent Program WiDz dla dyrektora szkoły jest skutecznym narzędziem kontroli systematycznej pracy nauczycieli w~zakresie bieżącego wpisywania ocen i~frekwencji oraz powiadamiania rodziców o~problemach wychowawczych dzieci. Dyrektor szkoły ma wgląd w~dane wszystkich uczniów i~pracowników szkoły mających konto w~programie WiDz.
+\noindent Dla dyrektora program WiDZ szkoły jest skutecznym narzędziem kontroli systematycznej pracy nauczycieli w~zakresie bieżącego wpisywania ocen i~frekwencji oraz powiadamiania rodziców o~problemach wychowawczych dzieci. Dyrektor szkoły ma wgląd w~dane wszystkich uczniów i~pracowników szkoły mających konto w~programie WiDz.
 
 \section{Wymagania funkcjonalne}
 \subsection{Dostęp do programu WiDz}
@@ -129,11 +131,11 @@ Studencka Pracownia Inżynierii Oprogramowania, G4 \\
 
 \subsection{Raporty i~wydruki}
 \subsubsection{Drukowanie świadectw} 
-\noindent Program WiDz umożliwia drukowanie świadectw szkolnych\footnote{Wzory świadectw zgodne z~załącznikiem do rozporządzenia Ministra Edukacji Narodowej z~dnia 11~marca~2008 r. zmieniające rozporządzenie w~sprawie zasad wydawania oraz wzorów świadectw, dyplomów państwowych i~innych druków szkolnych, sposobu dokonywania ich sprostowań i~wydawania duplikatów, a~także zasad legalizacji dokumentów przeznaczonych do obrotu prawnego z~zagranicą oraz zasad odpłatności za wykonywanie tych czynności (Dz. U. 2008, nr 67, poz. 412).} na giloszu. Świadectwo zostaje automatycznie wypełnione danymi z~programu, można je dowolnie modyfikować oraz wybierać krój i~rozmiar czcionki. Program umożliwia również archiwizację świadectw oraz zapis w~postaci pliku pdf\,\footnote{Dokumety w~formacie pdf można przeglądać programem Adobe Reader.}.
+\noindent Program WiDz umożliwia drukowanie świadectw szkolnych\footnote{Wzory świadectw zgodne z~załącznikiem do rozporządzenia Ministra Edukacji Narodowej z~dnia 11~marca~2008 r. zmieniające rozporządzenie w~sprawie zasad wydawania oraz wzorów świadectw, dyplomów państwowych i~innych druków szkolnych, sposobu dokonywania ich sprostowań i~wydawania duplikatów, a~także zasad legalizacji dokumentów przeznaczonych do obrotu prawnego z~zagranicą oraz zasad odpłatności za wykonywanie tych czynności (Dz. U. 2008, nr 67, poz. 412).} na giloszu. Świadectwo zostaje automatycznie wypełnione danymi z~programu, można je dowolnie modyfikować oraz wybierać krój i~rozmiar czcionki. Program umożliwia również archiwizację świadectw oraz zapis w~postaci pliku PDF\,\footnote{Dokumety w~formacie PDF można przeglądać programem Adobe Reader.}.
 
 \subsection{Plan lekcji}
 \subsubsection{Tworzenie planu lekcji}
-\noindent Program umożliwia wprowadzenie planu lekcji szkoły. Sprawdza, czy nie występują w~nim niezgodności, takie jak prowadzenie przez nauczyciela dwóch zajęć w~tym samym czasie, przypisanie klasie dwóch zajęć w~tym samym czasie, brak wymaganej ilości godzin zajęć z~danego przedmiotu w~tygodniu dla danej klasy.\\
+\noindent Program umożliwia wprowadzenie planu lekcji szkoły. Sprawdza, czy nie występują w~nim niezgodności, takie jak prowadzenie przez nauczyciela dwóch zajęć w~tym samym czasie, przypisanie klasie dwóch zajęć w~tym samym czasie, brak wymaganej liczby godzin zajęć z~danego przedmiotu w~tygodniu dla danej klasy.\\
 \indent Podczas układania planu korzysta się z~wprowadzonych wcześniej informacji o~nauczycielach, przedmiotach i~klasach.
 
 \subsubsection{Przegląd planu lekcji}
@@ -141,14 +143,14 @@ Studencka Pracownia Inżynierii Oprogramowania, G4 \\
 
 \subsection{Opłaty na rzecz szkoły}
 \subsubsection{Umieszczanie informacji o~opłatach}
-\noindent W~programie WiDz wychowawca lub sekretariat szkoły mogą dodać informacje o~opłacie za ubezpieczenie, wycieczkę lub inną należność i~określić wysokość tej opłaty. Istnieje również możliwość ustalenia osób, których opłata dotyczy.
+\noindent W~programie WiDz wychowawca lub sekretariat szkoły mogą dodawać informacje o~opłacie za ubezpieczenie, wycieczkę lub inną należność i~określać wysokość tej opłaty. Istnieje również możliwość ustalenia osób, których opłata dotyczy.
 
 \subsubsection{Dokonywanie opłat}
 \noindent WiDz wyświetla informacje o~opłatach, przygotowanych przez wychowawcę lub sekretariat, które dotyczą danego ucznia, a~opiekun może je uregulować za pomocą systemu PayPal\footnote{Zob. \url{http://www.paypal.com}.} (p. \ref{PLATNOSCI_WIDZ}). 
 
 \subsection{Komunikacja szkoła--opiekun}
 \subsubsection{Powiadamianie opiekuna o~ważnych wydarzeniach drogą esmesową}
-\noindent WiDz umożliwia wysłanie esemesem przez wychowawcę, nauczyciela lub sekretariat szkoły ważnej informacji do opiekuna ucznia  (p. \ref{WYSYLANIE_SMS}).
+\noindent WiDz umożliwia wysłanie esemesem przez wychowawcę, nauczyciela lub sekretariat szkoły ważnych informacji do opiekuna ucznia  (p. \ref{WYSYLANIE_SMS}).
 
 \subsubsection{Wysyłanie informacji do opiekuna pocztą elektroniczną lub za pomocą wiadomości prywatnych}
 \noindent Nauczyciel lub wychowawca klasy może za pomocą programu wysłać wiadomość do opiekuna ucznia pod jego adresem elektronicznym, dostępnym w~systemie, lub bezpośrednio na konto użytkownika w~programie WiDz, za pomocą ,,wiadomości prywatne''.
@@ -161,7 +163,7 @@ Studencka Pracownia Inżynierii Oprogramowania, G4 \\
 \noindent Uczeń ma możliwość ocenienia każdych odbytych zajęć, przez przypisanie im liczby od 1 do 6 wraz z~uzasadnienieniem i~uwagami do zajęć.
 
 \subsubsection{Tworzenie ankiety przez nauczyciela}
-\noindent Program umożliwia nauczycielowi tworzenie ankiet do każdego przedmiotu, który prowadzom, w~postaci pytań z~listą gotowych odpowiedzi do wyboru, lub takich na które odpowiedź jest udzielana w~postaci opisowej. Wypełnienie ankiety przez ucznia jest nieobowiązkowe i~anonimowe.
+\noindent Program umożliwia nauczycielowi tworzenie ankiet do każdego przedmiotu, który prowadzą, w~postaci pytań z~listą gotowych odpowiedzi do wyboru, lub takich na które odpowiedź jest udzielana w~postaci opisowej. Wypełnienie ankiety przez ucznia jest nieobowiązkowe i~anonimowe.
 
 \section{Wymagania niefunkcjonalne}
 \subsection{Bezpieczeństwo}
@@ -174,7 +176,7 @@ Studencka Pracownia Inżynierii Oprogramowania, G4 \\
 \end{itemize}
 
 \subsection{Niezawodność}
-\noindent Program WiDz jest dostępny 24 godziny na dobę. W~czasie największej aktywności programu, czyli podczas zajęć lekcyjnych, nad prawidłową pracą programu czuwa administrator. Wszelkie uaktualnienia programu powinny odbywać się w~godzinach nocnych.\\
+\noindent Program WiDz jest dostępny 24 godziny na dobę. W~czasie największej aktywności programu, czyli podczas zajęć lekcyjnych, nad włąściwą pracą programu czuwa administrator. Wszelkie uaktualnienia programu powinny odbywać się w~godzinach nocnych.\\
 \indent Aby zapobiec utracie danych program codziennie wykonuje kopię bazy danych (w godzinach nocnych).
 
 \subsection{Interfejsy programu}
@@ -198,7 +200,7 @@ Studencka Pracownia Inżynierii Oprogramowania, G4 \\
 \subsection{Wymagania zewnętrzne}
 \noindent Wysyłanie esemesów oraz dokonywanie płatności wymaga do poprawnego działania rejestracji lub zakupu usług świadczonych przez inne firmy. W~przypadku braku zakupu lub rejestracji jakiejś usługi program WiDz będzie nadal działać poprawnie, lecz związana z~usługą funkcja będzie nieaktywna.
 
-\subsubsection{Wysyłanie sms-ów}\label{WYSYLANIE_SMS}
+\subsubsection{Wysyłanie esemesów}\label{WYSYLANIE_SMS}
 \noindent Istnieje wiele polskich i~zagranicznych firm świadczących usługi związane z~wysyłaniem esemesów za pośrednictwem Internetu. Program WiDz używa w~tym celu interfejs API udostępniony przez smsAPI.pl\footnote{Dokumentacja API serwisu smsAPI.pl jest dostępna na stronie \url{http://www.smsapi.pl/smsAPI.pdf}.}. Aby skorzystać z~usług smsAPI.pl, szkoła musi dokonać rejestracji w~witrynie smsAPI.pl oraz zakupić pakiet esemesów\footnote{Zgodnie z~cennikiem obowiązującym na stronie \url{http://www.smsapi.pl/prices.html}.}, a~następnie wprowadzić nazwę użytkownika, hasło oraz typ usługi\footnote{O nazwach ecoSMS lub proSMS.} w~programie WiDz. Zaleca się wykupienie usługi proSMS\footnote{Porównanie usług ecoSMS i~proSMS zawiera dokument \hbox{\url{http://www.smsapi.pl/ecoSMS-proSMS.pdf}}.}, która umożliwia modyfikacje pola nadawcy.
 
 \subsubsection{Dokonywanie płatności za pośrednictwem programu WiDz}\label{PLATNOSCI_WIDZ}
